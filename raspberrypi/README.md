@@ -33,7 +33,7 @@ Make sure you change the command according to your package’s version
 
 now, go to the extracted folder.
 
-``
+```
 cd node-v12.18.0-linux-armv7l/
 ```
 
@@ -104,12 +104,9 @@ app listening on port 8081!
 
 GREAT! You have deployed your node app.
 
-you can view the app running in your browser at
-
-http://localhost:8081/
+you can view the app running in your browser at (http://localhost:8081/)
 
 You will see your Hello World website is deployed!
-
 
 Hello World Website running on your local host
 
@@ -123,15 +120,18 @@ To install docker, run the following commands on the terminal`
 
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
+
 ```
 ```
 sudo sh get-docker.sh
+
 ```
 
 once installed, check the version of docker to make sure everything is properly installed
 
 ```
 docker -v
+
 ```
 
 You will see the version of your docker displayed like this.
@@ -143,14 +143,11 @@ Let’s run the Docker hello-world image provided by Docker.
 
 ```
 docker run hello-world
-```
 
+```
 You should see something like this.
 
-
-
 Great!
-
 
 You just created a Docker hello-world container. This is a simply ‘hello world’ program in Java running within a docker container
 
@@ -160,6 +157,7 @@ First of all, you will need to create an empty docker file in docker-nodeapp dir
 
 ```
 touch Dockerfile
+
 ```
 
 Open the newly created file in your code editor.
@@ -175,6 +173,7 @@ EXPOSE 8081
 ```
 
 Create .dockerignore file in the same directory as your docker file and put the following lines of code in it.
+
 
 ```
 node_modules npm-debug.log
@@ -206,17 +205,15 @@ Now to see your image listed by docker, run docker image in terminal
 docker images
 ```
 
-
 6. Run the Docker image
 
 ```
 docker run -p 8080:8081 -d docker-nodeapp .
 ```
 
-
 Running your image with -d runs the container in detached mode, leaving the container running in the background. The -p flag redirects a public port to a private port inside the container. Run the image you previously built.
 
-Now you can go to http://localhost:8080/ and see your node app running within a docker container. you will notice that the port has changed from 8081 to 8080 as 8080 is our private port inside the container
+Now you can go to (http://localhost:8080/)and see your node app running within a docker container. you will notice that the port has changed from 8081 to 8080 as 8080 is our private port inside the container
 
 
 There you go! you have successfully dockerized your application.

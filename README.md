@@ -6,7 +6,7 @@
 
 ## Conferences
 
-- [IoET Conf 2020 July]()
+- [IoET Conf 2020 July](https://github.com/collabnix/ioetplanet/blob/master/2020/july/README.md)
 
 
 

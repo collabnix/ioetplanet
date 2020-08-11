@@ -1,11 +1,17 @@
+
+# How to run NodeJS Application on Raspberry Pi
+
+
 This is the complete guide starting from all the required installation to actual dockerizing and running of a node.js application.But first of all, why should we even dockerize our application?
 
 1. You can launch an entire development environment on any computer supporting Docker which means you don’t have to install libraries, dependencies, download packages, etc.
+
 2. Collaboration is really easy because of docker. The environment of the application remains compatible over the whole workflow. This implies that the app runs precisely the same way for developer, tester, and client, through development, staging, or production server.
 
 Now that we have a reason, let’s start with docker!
 
-1. Install Node.js & Npm on your Pi
+##  Install Node.js & Npm on your Pi
+
 Run the following command on a terminal to find out the version of node you require.
 
 ```
@@ -14,15 +20,20 @@ uname -m
 
 My required version is ‘armv7’.
 
-Next, to download node to your system,
-go to https://nodejs.org/en/download/ and copy the link of your required version
+## Download NodejS to your system,
+
+Go to https://nodejs.org/en/download/ and copy the link of your required version
+
 Use wget on the terminal to download your version of the node.
 
 ```
 wget https://nodejs.org/dist/v12.18.0/node-v12.18.0-linux-armv7l.tar.xz
 ```
 
-Now, we need to extract the freshly downloaded archive. You will generally find your file in ‘Downloads’ folder under the name ‘node-v12.18.0-linux-armv7l.tar.xz’ (12.18.0 is the version of node I downloaded. Your version could differ)
+## Extracting the freshly downloaded archive
+
+You will generally find your file in ‘Downloads’ folder under the name ‘node-v12.18.0-linux-armv7l.tar.xz’ (12.18.0 is the version of node I downloaded. Your version could differ)
+
 Now to extract the files, use tar
 
 ```
@@ -37,7 +48,7 @@ now, go to the extracted folder.
 cd node-v12.18.0-linux-armv7l/
 ```
 
-Finally, check if node and npm has been properly installed
+## Checking if node and npm has been properly installed
 
 ```
 node -v
@@ -49,7 +60,7 @@ npm -v
 
 If properly installed, these commands would return the versions of node and npm.
 
-2. Create node app
+##  Create node app
 
 To create the node.js app, first, we need a new directory where all our required files would reside.
 
@@ -61,14 +72,16 @@ mkdir docker-nodeapp
 cd docker-nodeapp
 ```
 
-now initialize your node project with a package.json which will hold the dependencies of the app. Use the following command and create a package.json by pressing enter to all the different prompts.
+## Initialize Your NodeJS project with a package.json 
+
+This will hold the dependencies of the app. Use the following command and create a package.json by pressing enter to all the different prompts.
 
 ```
 npm init
 ```
 
-Let’s add the Express Framework as the first dependency:
-now run
+## Adding the Express Framework as the first dependency:
+
 
 ```
 npm install express –save
@@ -98,19 +111,17 @@ In a terminal, go in the directory docker-nodeapp and run app.js
 node app.js
 ```
 
-You will receive a log like this on your terminal
-
-app listening on port 8081!
+You will receive a log like this on your terminal app listening on port 8081!
 
 GREAT! You have deployed your node app.
 
-you can view the app running in your browser at (http://localhost:8081/)
+You can view the app running in your browser at (http://localhost:8081/)
 
 You will see your Hello World website is deployed!
 
 Hello World Website running on your local host
 
-3. Install Docker on your Pi
+##  Install Docker on your Pi
 
 For installing Docker on you Raspberry Pi, make sure that your SSH connection is enabled, your OS is updated and upgraded
 
@@ -151,7 +162,7 @@ Great!
 
 You just created a Docker hello-world container. This is a simply ‘hello world’ program in Java running within a docker container
 
-4. Create your Dockerfile
+## Create your Dockerfile
 
 First of all, you will need to create an empty docker file in docker-nodeapp directory
 
@@ -181,7 +192,7 @@ node_modules npm-debug.log
 
 This will prevent your local modules and debug logs from being copied onto your Docker image and possibly overwriting modules installed within your image.
 
-5. Build your Docker image
+##  Build your Docker image
 
 To build your docker file using the command ‘docker build’.
 
@@ -205,7 +216,7 @@ Now to see your image listed by docker, run docker image in terminal
 docker images
 ```
 
-6. Run the Docker image
+## Run the Docker image
 
 ```
 docker run -p 8080:8081 -d docker-nodeapp .

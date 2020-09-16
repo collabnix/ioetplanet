@@ -8,8 +8,8 @@
 1. [Intent](#Intent)
 2. [Hardware](#hardware)
 3. [Software](#Software)
-4. [Preparing Your Jetson Nano](#1-preparing-your-jetson-nano)
-  - [Flashing SD card image](#flashing-sd-card-image)
+4. [Preparing Your Jetson Nano](preparing-your-jetson-nano)
+  - [Flashing SD card image](#1-flashing-sd-card-image)
    
 
 
@@ -33,7 +33,7 @@ Everything and anything you want to know about NVIDIA Jetson Nano, Docker & K3s 
 
 ## Preparing Your Jetson Nano
 
-### Flashing Jetson SD Card Image
+###1  Flashing Jetson SD Card Image
 
  - Unzip the SD card image
  - Insert SD card into your system. 

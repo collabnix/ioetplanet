@@ -33,6 +33,12 @@ Everything and anything you want to know about NVIDIA Jetson Nano, Docker & K3s 
 - Jetson SD card image from https://developer.nvidia.com/embedded/downloads
 - Etcher software installed on your system
 
-### Flashing Jetson SD Card Image
+## Preparing Your Jetson Nano
+
+## Flashing Jetson SD Card Image
+
+ - Unzip the SD card image
+ - Insert SD card into your system. 
+ - Bring up Etcher tool and select the target SD card to which you want to flash the image.
 
 ![My Image](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonnano/Screenshot%202020-09-16%20at%2010.29.02%20AM.png)

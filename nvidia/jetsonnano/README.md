@@ -13,9 +13,7 @@
    
 
 
-## Flashing Jetson SD Card Image
 
-![My Image](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonnano/Screenshot%202020-09-16%20at%2010.29.02%20AM.png)
 
 ## Intent
 

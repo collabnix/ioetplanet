@@ -1,7 +1,7 @@
 # IoET Planet 
 
 - [Raspberry Pi]()
-- [NVIDIA Jetson Nano]()
+- [NVIDIA Jetson Nano](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonnano/README.md)
 
 
 

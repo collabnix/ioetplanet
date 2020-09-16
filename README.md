@@ -1,5 +1,8 @@
 # IoET Planet 
 
+- [Raspberry Pi]()
+- [NVIDIA Jetson Nano]()
+
 
 
 

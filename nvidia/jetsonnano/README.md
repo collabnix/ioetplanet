@@ -33,7 +33,7 @@ Everything and anything you want to know about NVIDIA Jetson Nano, Docker & K3s 
 
 ## Preparing Your Jetson Nano
 
-###1  Flashing Jetson SD Card Image
+### 1. Preparing Your Raspberry Pi Flashing Jetson SD Card Image
 
  - Unzip the SD card image
  - Insert SD card into your system. 

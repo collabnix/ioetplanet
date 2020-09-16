@@ -9,7 +9,7 @@
 2. [Hardware](#hardware)
 3. [Software](#Software)
 4. [Preparing Your Jetson Nano](preparing-your-jetson-nano)
-  - [Flashing SD card image](#1-flashing-sd-card-image)
+   - [Flashing SD card image](#1-flashing-sd-card-image)
    
 
 

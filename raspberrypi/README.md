@@ -7,7 +7,7 @@ Do you want to get started with Raspberry Pi? This is a right place to be.
 
 <details> 
   <summary>What is Raspberry Pi? </summary>
-  Raspberry Pi is credit-card sized computer system.
+  <br>Raspberry Pi is credit-card sized computer system.
 
   </table>
 </details>
@@ -34,7 +34,7 @@ Do you want to get started with Raspberry Pi? This is a right place to be.
 
 <details> 
   <summary>How to connect Raspberry Pi to a Monitor? </summary>
-  Using HDMI cable
+   <br> Using HDMI cable
   
 ![My Image](https://github.com/collabnix/raspberrypi/blob/master/images/IMG_20200829_125708.jpg)
 
@@ -45,14 +45,14 @@ Do you want to get started with Raspberry Pi? This is a right place to be.
 
 <details> 
   <summary>Which OS does Raspberry Pi run? </summary>
-  Raspbian OS
+   <br> Raspbian OS
 
   </table>
 </details>
 
 <details> 
   <summary>How to setup a static IP on Raspberry Pi?</summary>
-
+ <br>
 
 * Open DHCP config for editing
 
@@ -86,6 +86,7 @@ static domain_name_servers=1.1.1.1 1.0.0.1
 
 <details> 
   <summary>How to access Raspberry Pi from an external network?</summary>
+   <br>
   You need to go into your router settings and set up port forwarding to the static IP of your raspberry pi, which you can get by running the following command:
   `hostname -I`
 
@@ -98,7 +99,7 @@ If you want to ssh into your rpi from external network then use the static IP an
 
 <details> 
   <summary>How to setup SSH in raspberry Pi?</summary>
-
+ <br>
 * Run the following command and enable ssh:
 
 ```sh
@@ -136,7 +137,7 @@ ssh -i id_rsa pi@<ip-addr-of-pi>
 
 <details> 
   <summary>How to view the Raspberry Pi display wirelessly?</summary>
-  This can be done by using a VNC server on the raspberry pi and a VNC viewer on the client computer. The most secure way of doing this is using VNC over SSH.
+   <br>This can be done by using a VNC server on the raspberry pi and a VNC viewer on the client computer. The most secure way of doing this is using VNC over SSH.
 
   * VNC over SSH tunnel. On the client machine run:
 
@@ -162,7 +163,7 @@ xtightvncviewer localhost:1 -compresslevel 9 -quality 4 -depth 8
 
 <details> 
   <summary>How to create a VPN server using Raspberry Pi?</summary>
-
+ <br>
   * Install openvpn and wget
 
 * Get the openvpn installation script (only runs on Ubuntu, Fedora, CentOS) chmod and execute it as a superuser
@@ -193,7 +194,7 @@ openvpn /etc/openvpn/client/client.conf
 
 <details> 
   <summary>How to setup an ad-blocker on Raspberry Pi?</summary>
-
+ <br>
 * A single command installation can be done by the following URL
 
 ```
@@ -225,7 +226,7 @@ pihole -w <domain>
 
 <details> 
   <summary>What are some uses of Raspberry Pi?</summary>
-
+ <br>
 * NAS (Network Attached Storage) server using `OMV` ([OpenMediaVault](https://www.openmediavault.org/))
 
 * Media streaming OS using `OSMC` ([Open Source Media Center](https://osmc.tv/)) or Kodi Media streming server
@@ -251,6 +252,7 @@ pihole -w <domain>
 
 <details> 
   <summary>How to create an audio/video conferencing server on a Raspberry Pi?</summary>
+   <br>
   Jitsi is a opensource server and video-bridge for hosting a chat, audio and video conferencing server on a raspberry pi.
   It can be deployed easily on any debian based distro but requires port-forwarding to be enabled from the router settings.
 

@@ -1,6 +1,6 @@
 # IoET Planet 
 
-- [Raspberry Pi]()
+- [Raspberry Pi](https://github.com/collabnix/ioetplanet/blob/master/raspberrypi/README.md)
 - [NVIDIA Jetson Nano](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonnano/README.md)
   - [Running Minecraft inside Docker Container](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonnano/minecraft/README.md)
 

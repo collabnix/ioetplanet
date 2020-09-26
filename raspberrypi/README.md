@@ -264,9 +264,5 @@ pihole -w <domain>
   </table>
 </details>
 
-<details> 
-  <summary>Deploy a minecraft server on Raspberry Pi</summary>
-  Take a look at [this amazing](https://www.thegeekpub.com/260634/how-to-create-a-raspberry-pi-minecraft-server/) article in order to deploy a minecraft server on your pi. Note that you would have to setup port forwarding on your router for making the server public.
 
-  </table>
-</details>
+

@@ -29,7 +29,10 @@
   - [Redis running inside Docker container on NVIDIA Jetson Nano](https://collabnix.com/running-redis-inside-docker-container-on-jetson-nano/)
 
 
+- Pine64
 
+
+- Arduino
 
 ## Conferences
 

@@ -17,10 +17,12 @@
   - [Turn Your Raspberry Pi into Out-of-band Monitoring Device using Docker](https://collabnix.com/turn-your-raspberry-pi-into-out-of-band-monitoring-device-using-docker/)
   - [Building the first CentOS 7.2 ARM docker image on Raspberry Pi 3](https://collabnix.com/running-docker-on-raspberry-pi-3-with-centos-7-as-a-base-image/)
   - [Docker 1.12.1 on Raspberry Pi 3 in 5 minutes](https://collabnix.com/docker-1-12-1-on-raspberry-pi-3-in-5-minutes/)
+  - [The Rise of Pico: At the Grace Hopper Celebration India](https://collabnix.com/the-rise-of-pico-at-the-grace-hopper-celebration-india/)
 
 
 - [NVIDIA Jetson Nano](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonnano/README.md)
   - [Object Detection with Yolo Made Simple using Docker on NVIDIA Jetson Nano](https://collabnix.com/object-detection-with-yolo-using-docker-19-03-on-nvidia-jetson-nano/)
+  - [https://collabnix.com/multi-node-k3s-cluster-on-nvidia-jetson-nano-in-5-minutes/](https://collabnix.com/multi-node-k3s-cluster-on-nvidia-jetson-nano-in-5-minutes/)
   - [Running Minecraft inside Docker Container](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonnano/minecraft/README.md)
   - [How to run Docker Compose on Jetson Nano](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonnano/README.md#installing-docker-compose-on-nvidia-jetson-nano)
   - [Pico goes Cloudless: Running RTMP & Nginx for Video Streaming using Docker on Jetson Nano locally](https://collabnix.com/running-rtmp-nginx-for-video-streaming-using-docker-on-jetson-nano/)

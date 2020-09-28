@@ -109,7 +109,32 @@ Server:
   GitCommit:
 ```
 
-## Using Docker Compose
+## Installing Docker Compose on NVIDIA Jetson Nano
+
+Jetson Nano doesnt come with Docker Compose installed by default. You will need to install it first:
+
+```
+export DOCKER_COMPOSE_VERSION=1.27.4
+sudo apt-get install libhdf5-dev
+sudo apt-get install libssl-dev
+sudo pip3 install docker-compose=="${DOCKER_COMPOSE_VERSION}"
+apt install python3
+apt install python3-pip
+pip install docker-compose
+```
+
+```
+docker-compose version
+docker-compose version 1.26.2, build unknown
+docker-py version: 4.3.1
+CPython version: 3.6.9
+OpenSSL version: OpenSSL 1.1.1  11 Sep 2018
+```
+
+
+
+
+Next, add default runtime for NVIDIA:
 
 Edit /etc/docker/daemon.json
 

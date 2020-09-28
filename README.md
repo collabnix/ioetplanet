@@ -23,6 +23,7 @@
   - [Object Detection with Yolo Made Simple using Docker on NVIDIA Jetson Nano](https://collabnix.com/object-detection-with-yolo-using-docker-19-03-on-nvidia-jetson-nano/)
   - [Running Minecraft inside Docker Container](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonnano/minecraft/README.md)
   - [How to run Docker Compose on Jetson Nano](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonnano/README.md#installing-docker-compose-on-nvidia-jetson-nano)
+  - [Pico goes Cloudless: Running RTMP & Nginx for Video Streaming using Docker on Jetson Nano locally](https://collabnix.com/running-rtmp-nginx-for-video-streaming-using-docker-on-jetson-nano/)
 
 
 

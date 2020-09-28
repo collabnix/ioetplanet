@@ -73,3 +73,64 @@ Server:
   GitCommit:       
 ```
 
+### 3. Checking Docker runtime 
+
+Starting with JetPack 4.2, NVIDIA has introduced a container runtime with Docker integration. This custom runtime enables Docker containers to access the underlying GPUs available in the Jetson family.
+
+```
+pico@pico1:/tmp/docker-build$ sudo nvidia-docker version
+NVIDIA Docker: 2.0.3
+Client:
+ Version:           19.03.6
+ API version:       1.40
+ Go version:        go1.12.17
+ Git commit:        369ce74a3c
+ Built:             Fri Feb 28 23:47:53 2020
+ OS/Arch:           linux/arm64
+ Experimental:      false
+
+Server:
+ Engine:
+  Version:          19.03.6
+  API version:      1.40 (minimum version 1.12)
+  Go version:       go1.12.17
+  Git commit:       369ce74a3c
+  Built:            Wed Feb 19 01:06:16 2020
+  OS/Arch:          linux/arm64
+  Experimental:     false
+ containerd:
+  Version:          1.3.3-0ubuntu1~18.04.2
+  GitCommit:        
+ runc:
+  Version:          spec: 1.0.1-dev
+  GitCommit:        
+ docker-init:
+  Version:          0.18.0
+  GitCommit:
+```
+
+## Using Docker Compose
+
+Edit /etc/docker/daemon.json
+
+```
+{
+    "runtimes": {
+        "nvidia": {
+            "path": "/usr/bin/nvidia-container-runtime",
+            "runtimeArgs": []
+        }
+    },
+
+    "default-runtime": "nvidia",
+    "node-generic-resources": [ "NVIDIA-GPU=0" ]
+}
+
+```
+
+Restart the Docker Daemon
+
+```
+systemctl restart docker
+```
+

@@ -75,5 +75,20 @@ Server:
 ```
 
 
+## Installing Docker Compose
+
+```
+sudo pacman -S docker-compose
+```
+
+```
+[ajeetraina@pine64 ~]$ sudo docker-compose version
+docker-compose version 1.27.3, build unknown
+docker-py version: 4.3.1
+CPython version: 3.8.5
+OpenSSL version: OpenSSL 1.1.1g  21 Apr 2020
+[ajeetraina@pine64 ~]$ 
+```
+
 
  

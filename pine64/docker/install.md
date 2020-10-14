@@ -87,4 +87,10 @@ OpenSSL version: OpenSSL 1.1.1g  21 Apr 2020
 ```
 
 
- 
+## Installing VIM
+
+```
+pacman -S vim
+```
+
+

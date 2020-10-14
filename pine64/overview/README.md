@@ -23,4 +23,6 @@ The Pinebook Pro is a Linux and *BSD ARM laptop from PINE64. It is built to be a
 
 ## Specifications
 
+![MY Image](https://github.com/collabnix/ioetplanet/blob/master/pine64/overview/pinebook-arch.png)
+
 The Pinebook Pro is equipped with 4GB LPDDR4 system memory, high capacity eMMC flash storage, and 128Mb SPI boot Flash. The I/O includes: 1x micro SD card reader (bootable), 1x USB 2.0, 1x USB 3.0, 1x USB type C Host with DP 1.2 and power-in, PCIe 4x for an NVMe SSD drive (requires an optional adapter), and UART (via the headphone jack by setting an internal switch).

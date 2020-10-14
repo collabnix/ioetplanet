@@ -38,11 +38,12 @@
 
 - Arduino
 
-## Conferences
+## Conferences/Slides
 
 
 
 - IoET Conf 2020 July - [Slides](https://github.com/collabnix/ioetplanet/blob/master/2020/july/README.md) | [Watch](https://www.youtube.com/watch?v=zPzp5wb3nnc&t=3769s) | [Website](https://conf.ioetplanet.com/) | [Speakers](https://conf.ioetplanet.com/speakers.html)  <br>
+- Docker, AI and IoT - [Slides](https://www.slideshare.net/ajeetraina/quantifying-your-world-with-ai-docker-on-the-edge-osconf-2020-jaipur)
 
 
 

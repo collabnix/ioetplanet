@@ -36,7 +36,7 @@
     - [Docker Compose on Pinebook Pro Laptop](https://github.com/collabnix/ioetplanet/blob/master/pine64/docker/install.md#installing-docker-compose)
     - [Installing K3s on Manjaro](https://github.com/collabnix/ioetplanet/blob/master/pine64/kubernetes/k3s/README.md)
 
-- Arduino
+
 
 ## Conferences/Slides
 

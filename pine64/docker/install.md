@@ -1,5 +1,8 @@
 # Installing Docker on Manjaro-ARM OS running on Pine64 
 
+
+Docker doesn't come with Pine64 Pro Laptop by default but you can install it flawlessly following the below steps:
+
 ```
 ssh ajeetraina@192.168.1.8
 ajeetraina@192.168.1.8's password: 

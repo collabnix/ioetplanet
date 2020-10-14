@@ -33,6 +33,7 @@
 
     - [An Overview of $200 Pinebook Pro ARM Laptop](https://github.com/collabnix/ioetplanet/blob/master/pine64/overview/README.md) 
     - [A First look at Docker on Pinebook Pro](https://github.com/collabnix/ioetplanet/blob/master/pine64/docker/install.md)
+    - [Docker Compose on Pinebook Pro Laptop](https://github.com/collabnix/ioetplanet/blob/master/pine64/docker/install.md#installing-docker-compose)
     - [Installing K3s on Manjaro](https://github.com/collabnix/ioetplanet/blob/master/pine64/kubernetes/k3s/README.md)
 
 - Arduino

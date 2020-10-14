@@ -29,7 +29,7 @@
   - [Redis running inside Docker container on NVIDIA Jetson Nano](https://collabnix.com/running-redis-inside-docker-container-on-jetson-nano/)
 
 
-- Pine64
+- [Pine64](https://github.com/collabnix/ioetplanet/blob/master/pine64/overview/README.md)
 
     - [An Overview of $200 Pinebook Pro ARM Laptop](https://github.com/collabnix/ioetplanet/blob/master/pine64/overview/README.md) 
     - [A First look at Docker on Pinebook Pro](https://github.com/collabnix/ioetplanet/blob/master/pine64/docker/install.md)

@@ -22,3 +22,30 @@ Created symlink /etc/systemd/system/multi-user.target.wants/k3s.service → /etc
 [ajeetraina@pine64 ~]$ 
 ```
 
+```
+[ajeetraina@pine64 ~]$ sudo  curl -LO https://raw.githubusercontent.com/portainer/portainer-k8s/master/portainer-nodeport.yaml
+[sudo] password for ajeetraina: 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1421  100  1421    0     0   1546      0 --:--:-- --:--:-- --:--:--  1544
+
+```
+
+```
+[ajeetraina@pine64 ~]$ sudo kubectl apply -f portainer-nodeport.yaml
+namespace/portainer created
+serviceaccount/portainer-sa-clusteradmin created
+clusterrolebinding.rbac.authorization.k8s.io/portainer-crb-clusteradmin created
+service/portainer created
+deployment.apps/portainer created
+[ajeetraina@pine64 ~]$
+```
+
+```
+[ajeetraina@pine64 ~]$ sudo kubectl get svc -n portainer
+
+
+NAME        TYPE       CLUSTER-IP    EXTERNAL-IP   PORT(S)                         AGE
+portainer   NodePort   10.43.9.186   <none>        9000:30777/TCP,8000:30776/TCP   114s
+```
+

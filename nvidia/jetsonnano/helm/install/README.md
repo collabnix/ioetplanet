@@ -43,3 +43,15 @@ pico@pico1:~$ helm repo add bitnami https://charts.bitnami.com/bitnami
 "bitnami" has been added to your repositories
 ```
 
+```
+pico@pico1:~/jetson-redis$ vi redis-sts.yaml
+pico@pico1:~/jetson-redis$ sudo kubectl apply -f redis-sts.yaml 
+configmap/redis-cluster created
+statefulset.apps/redis-cluster created
+pico@pico1:~/jetson-redis$ sudo kubectl apply -f redis^C
+pico@pico1:~/jetson-redis$ 
+pico@pico1:~/jetson-redis$ vi redis-svc.yaml
+pico@pico1:~/jetson-redis$ sudo k3s kubectl apply -f redis-svc.yaml 
+service/redis-cluster created
+pico@pico1:~/jetson-redis$ 
+```

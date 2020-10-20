@@ -36,3 +36,10 @@ Verifying checksum... Done.
 Preparing to install helm into /usr/local/bin
 helm installed into /usr/local/bin/helm
 ```
+
+
+```
+pico@pico1:~$ helm repo add bitnami https://charts.bitnami.com/bitnami
+"bitnami" has been added to your repositories
+```
+

@@ -1,4 +1,4 @@
-# RDP (Remote Desktop) with JETSON NANO
+# How to enable RDP (Remote Desktop) on JETSON NANO
 
 
 ##  Steps

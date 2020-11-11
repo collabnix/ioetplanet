@@ -169,3 +169,38 @@ pico1   Ready    master   18h   v1.19.3+k3s2
 pico2   Ready    <none>   12s   v1.19.3+k3s2
 ```
 
+
+```
+pico@pico1:~$ sudo k3s kubectl get nodes
+[sudo] password for pico: 
+NAME    STATUS   ROLES    AGE     VERSION
+pico1   Ready    master   19h     v1.19.3+k3s2
+pico2   Ready    <none>   13m     v1.19.3+k3s2
+pico3   Ready    <none>   8m57s   v1.19.3+k3s2
+pico4   Ready    <none>   39s     v1.19.3+k3s2
+pico@pico1:~$ sudo  curl -LO https://raw.githubusercontent.com/portainer/portainer-k8s/master/portainer-nodeport.yaml
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1421  100  1421    0     0   3229      0 --:--:-- --:--:-- --:--:--  3236
+pico@pico1:~$ sudo kubectl apply -f portainer-nodeport.yaml
+namespace/portainer created
+serviceaccount/portainer-sa-clusteradmin created
+Warning: rbac.authorization.k8s.io/v1beta1 ClusterRoleBinding is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRoleBinding
+clusterrolebinding.rbac.authorization.k8s.io/portainer-crb-clusteradmin created
+service/portainer created
+deployment.apps/portainer created
+pico@pico1:~$ 
+```
+
+```
+pico@pico1:~$ sudo k3s kubectl get po,svc,deploy -n portainer
+NAME                             READY   STATUS    RESTARTS   AGE
+pod/portainer-5fbd6bb5d8-dxgp4   1/1     Running   0          53s
+
+NAME                TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)                         AGE
+service/portainer   NodePort   10.43.227.233   <none>        9000:30777/TCP,8000:30776/TCP   53s
+
+NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/portainer   1/1     1            1           53s
+pico@pico1:~$ 
+```

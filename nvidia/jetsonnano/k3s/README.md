@@ -2,9 +2,33 @@
 
 ## Prerequisite
 
+
+## Hardware Setup
+
+- 4x Jetson Nano 4GB/2GB
+
+
+```
+pico1 - 192.168.1.160
+pico2 - 192.168.1.161
+pico3 - 192.168.1.162
+pico4 - 192.168.1.163
+```
+
+
+- Jetson Nano SD Card Image flashed
+
+
+## Software Setup
+
+Login to Jetson Nano and install ```curl```
 ```
 apt install curl
 ```
+
+Ensure that each of the Jetson Nano boxes have ```/etc/hosts``` entries on each of the nodes.
+
+## Setting up K3s Master Node
 
 ```
 pico@pico1:~$ curl -sfL https://get.k3s.io | sh -
@@ -26,17 +50,24 @@ Created symlink /etc/systemd/system/multi-user.target.wants/k3s.service → /etc
 [INFO]  systemd: Starting k3s
 ```
 
+## Verify K3s Nodes
+
 ```
 sudo k3s kubectl get node -o wide
 NAME    STATUS   ROLES    AGE   VERSION        INTERNAL-IP     EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION   CONTAINER-RUNTIME
 pico1   Ready    master   70s   v1.19.3+k3s2   192.168.1.160   <none>        Ubuntu 18.04.5 LTS   4.9.140-tegra    containerd://1.4.0-k3s1
 ```
 
+
+## Listing K3s Nodes
+
 ```
 sudo k3s kubectl get node
 NAME    STATUS   ROLES    AGE    VERSION
 pico1   Ready    master   101s   v1.19.3+k3s2
 ```
+
+## Getting K3s Cluster Information
 
 ```
 sudo k3s kubectl cluster-info
@@ -48,6 +79,7 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 pico@pico1:~$ 
 ```
 
+## Getting Detailed Information
 
 ```
 pico@pico1:~$ sudo k3s kubectl get all --all-namespaces
@@ -86,6 +118,9 @@ kube-system   job.batch/helm-install-traefik   1/1           41s        2m38s
 pico@pico1:~$ 
 ```
 
+## Testing NGINX Pod
+
+
 ```
 sudo k3s kubectl run mynginx --image=nginx --replicas=3 --port=80
 Flag --replicas has been deprecated, has no effect and will be removed in the future.
@@ -93,12 +128,15 @@ pod/mynginx created
 pico@pico1:~$ 
 ```
 
+## Retrieving Nginx Pod
+
 ```
 sudo k3s kubectl get po
 NAME      READY   STATUS    RESTARTS   AGE
 mynginx   1/1     Running   0          44s
 ```
 
+## Adding the first K3s Worker Node(Jetson Nano)
 
 ```
 pico@pico2:~$ sudo curl -sfL https://get.k3s.io | K3S_URL=https://pico1:6443 K3S_TOKEN=K10ddc558bd2734738e45ffc9ad1a149203910e990de39aaf49c5c39b5ca0017c4c::server:39c8376b20e2d075b7e0796452b063ba  sh -

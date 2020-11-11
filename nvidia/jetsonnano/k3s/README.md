@@ -100,4 +100,28 @@ mynginx   1/1     Running   0          44s
 ```
 
 
+```
+pico@pico2:~$ sudo curl -sfL https://get.k3s.io | K3S_URL=https://pico1:6443 K3S_TOKEN=K10ddc558bd2734738e45ffc9ad1a149203910e990de39aaf49c5c39b5ca0017c4c::server:39c8376b20e2d075b7e0796452b063ba  sh -
+[INFO]  Finding release for channel stable
+[INFO]  Using v1.19.3+k3s2 as release
+[INFO]  Downloading hash https://github.com/rancher/k3s/releases/download/v1.19.3+k3s2/sha256sum-arm64.txt
+[INFO]  Skipping binary downloaded, installed k3s matches hash
+[INFO]  Skipping /usr/local/bin/kubectl symlink to k3s, already exists
+[INFO]  Skipping /usr/local/bin/crictl symlink to k3s, already exists
+[INFO]  Skipping /usr/local/bin/ctr symlink to k3s, command exists in PATH at /usr/bin/ctr
+[INFO]  Creating killall script /usr/local/bin/k3s-killall.sh
+[INFO]  Creating uninstall script /usr/local/bin/k3s-agent-uninstall.sh
+[INFO]  env: Creating environment file /etc/systemd/system/k3s-agent.service.env
+[INFO]  systemd: Creating service file /etc/systemd/system/k3s-agent.service
+[INFO]  systemd: Enabling k3s-agent unit
+Created symlink /etc/systemd/system/multi-user.target.wants/k3s-agent.service → /etc/systemd/system/k3s-agent.service.
+[INFO]  systemd: Starting k3s-agent
+```
+
+```
+sudo k3s kubectl get nodes
+NAME    STATUS   ROLES    AGE   VERSION
+pico1   Ready    master   18h   v1.19.3+k3s2
+pico2   Ready    <none>   12s   v1.19.3+k3s2
+```
 

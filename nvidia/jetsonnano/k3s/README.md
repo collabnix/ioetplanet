@@ -1,4 +1,4 @@
-# Setting up 5 Node K3s Cluster
+# Setting up 5 Node K3s Cluster on Jetson Nano 4GB Model
 
 ## Prerequisite
 
@@ -137,6 +137,12 @@ mynginx   1/1     Running   0          44s
 ```
 
 ## Adding the first K3s Worker Node(Jetson Nano)
+
+
+### Preparing Worker Nodes
+
+- Installing ```curl``` CLI on Jetson Nano
+
 
 ```
 pico@pico2:~$ sudo curl -sfL https://get.k3s.io | K3S_URL=https://pico1:6443 K3S_TOKEN=K10ddc558bd2734738e45ffc9ad1a149203910e990de39aaf49c5c39b5ca0017c4c::server:39c8376b20e2d075b7e0796452b063ba  sh -

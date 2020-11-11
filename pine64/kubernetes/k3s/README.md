@@ -49,3 +49,57 @@ NAME        TYPE       CLUSTER-IP    EXTERNAL-IP   PORT(S)                      
 portainer   NodePort   10.43.9.186   <none>        9000:30777/TCP,8000:30776/TCP   114s
 ```
 
+
+```
+pico@pico1:~$ sudo k3s kubectl describe  po -n portainer
+Name:         portainer-5fbd6bb5d8-dxgp4
+Namespace:    portainer
+Priority:     0
+Node:         pico2/192.168.1.161
+Start Time:   Tue, 10 Nov 2020 22:37:55 -0700
+Labels:       app=app-portainer
+              pod-template-hash=5fbd6bb5d8
+Annotations:  <none>
+Status:       Running
+IP:           10.42.1.3
+IPs:
+  IP:           10.42.1.3
+Controlled By:  ReplicaSet/portainer-5fbd6bb5d8
+Containers:
+  portainer:
+    Container ID:   containerd://70d7a96eaaa5aaf338194ceaaf858d3e2ce2ed74390e17cbceaef9cefdccc092
+    Image:          portainerci/portainer:develop
+    Image ID:       docker.io/portainerci/portainer@sha256:31ce431595a4e8223e07e992a5d9d2412c05191355723d56d542c08ff64c971f
+    Port:           9000/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Tue, 10 Nov 2020 22:38:07 -0700
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from portainer-sa-clusteradmin-token-g9qmz (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  portainer-sa-clusteradmin-token-g9qmz:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  portainer-sa-clusteradmin-token-g9qmz
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age    From               Message
+  ----    ------     ----   ----               -------
+  Normal  Scheduled  4m40s  default-scheduler  Successfully assigned portainer/portainer-5fbd6bb5d8-dxgp4 to pico2
+  Normal  Pulling    4m39s  kubelet            Pulling image "portainerci/portainer:develop"
+  Normal  Pulled     4m28s  kubelet            Successfully pulled image "portainerci/portainer:develop" in 10.98939761s
+  Normal  Created    4m28s  kubelet            Created container portainer
+  Normal  Started    4m28s  kubelet            Started container portainer
+  ```

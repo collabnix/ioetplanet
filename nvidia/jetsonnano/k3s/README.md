@@ -178,10 +178,18 @@ pico1   Ready    master   19h     v1.19.3+k3s2
 pico2   Ready    <none>   13m     v1.19.3+k3s2
 pico3   Ready    <none>   8m57s   v1.19.3+k3s2
 pico4   Ready    <none>   39s     v1.19.3+k3s2
+```
+
+## Running Portainer on Jetson Nano Cluster
+
+```
 pico@pico1:~$ sudo  curl -LO https://raw.githubusercontent.com/portainer/portainer-k8s/master/portainer-nodeport.yaml
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100  1421  100  1421    0     0   3229      0 --:--:-- --:--:-- --:--:--  3236
+```
+
+```
 pico@pico1:~$ sudo kubectl apply -f portainer-nodeport.yaml
 namespace/portainer created
 serviceaccount/portainer-sa-clusteradmin created

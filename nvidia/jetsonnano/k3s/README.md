@@ -1,4 +1,4 @@
-# Setting up 5 Node K3s Cluster on Jetson Nano 4GB Model
+# Setting up K3s Cluster on 5 Node Jetson Nano 
 
 ## Prerequisite
 

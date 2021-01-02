@@ -43,7 +43,7 @@ cd ioetplanet/nvidia/jetsonnano/sensors
 ## Running the Script
 
 ```
- sudo python3 read-all.py 
+ sudo python3 read-sensor.py 
 read-all.py - Displays temperature, pressure, humidity, and gas.
 
 Press Ctrl+C to exit!

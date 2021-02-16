@@ -58,6 +58,12 @@ sudo docker-compose --version
 ```
 
 
-
+```
+sudo docker-compose version
+docker-compose version 1.28.2, build unknown
+docker-py version: 4.4.2
+CPython version: 3.6.9
+OpenSSL version: OpenSSL 1.1.1  11 Sep 2018
+```
 
 

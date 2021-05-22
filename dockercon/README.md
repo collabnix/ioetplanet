@@ -3,6 +3,7 @@
 - Verifying if Docker 20.10.3 is installed 
 - Verifying if Sensor is detected
 - Building Docker Image for RedisTimeSeries
+- Clone the Repository
 - Running Sensorloader script and pushing it to the local RedisTimeSeries database
 - Running Grafana 
 - Ploting Temperature, Humidity and Pressure onto the Grafana dashboard
@@ -78,6 +79,13 @@ redis-cli
 # Modules
 module:name=timeseries,ver=999999,api=1,filters=0,usedby=[],using=[],options=[]
 127.0.0.1:6379>
+```
+
+## Clone the repository
+
+```
+$ git clone https://github.com/redis-developer/redis-datasets
+$ cd redis-datasets/redistimeseries/realtime-sensor-jetson
 ```
 
 ## Running Sensorload Script

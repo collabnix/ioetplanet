@@ -3,6 +3,7 @@
 - Verifying if Docker 20.10.3 is installed 
 - Verifying if Sensor is detected
 - Building Docker Image for RedisTimeSeries
+- Running RedisTimeseries Docker image on Jetson Nano
 - Clone the Repository
 - Running Sensorloader script and pushing it to the local RedisTimeSeries database
 - Running Grafana 
@@ -69,6 +70,13 @@ cd RedisTimeSeries.git
 
 ```
 docker build -t ajeetraina/redistimeseries-jetson . -f Dockerfile.jetson.edge
+```
+
+## Running RedisTimeSeries 
+
+
+```
+docker run -dit -p 6379:6379 ajeetraina/redistimeseries-jetson
 ```
 
 ## Verifying if RedisTimeSeries Module is loaded

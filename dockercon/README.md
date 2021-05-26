@@ -110,4 +110,6 @@ sudo python3 sensorloader2.py --host localhost --port 6379
 docker run -d -e "GF_INSTALL_PLUGINS=redis-app" -p 3000:3000 grafana/grafana
 ```
 
+Try to add data source for 70.167.220.162
+
 

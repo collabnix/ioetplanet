@@ -12,6 +12,8 @@
 
 ## Verifying Docker version
 
+SSH to 70.167.220.160 and install Docker
+
 ```
 pico@pico1:~$ docker version
 Client: Docker Engine - Community

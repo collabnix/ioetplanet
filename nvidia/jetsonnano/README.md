@@ -159,3 +159,43 @@ Restart the Docker Daemon
 systemctl restart docker
 ```
 
+
+## Identify the Jetson board
+
+
+```
+pico@pico1:~$ git clone https://github.com/jetsonhacks/jetsonUtilities
+Cloning into 'jetsonUtilities'...
+remote: Enumerating objects: 123, done.
+remote: Counting objects: 100% (39/39), done.
+remote: Compressing objects: 100% (30/30), done.
+remote: Total 123 (delta 15), reused 23 (delta 8), pack-reused 84
+Receiving objects: 100% (123/123), 32.87 KiB | 5.48 MiB/s, done.
+Resolving deltas: 100% (49/49), done.
+pico@pico1:~$ cd jetson
+-bash: cd: jetson: No such file or directory
+pico@pico1:~$ cd jetsonUtilities/
+```
+
+```
+pico@pico1:~/jetsonUtilities$ ls
+LICENSE  README.md  jetsonInfo.py  scripts
+
+pico@pico1:~/jetsonUtilities$ python3 jetsonInfo.py 
+NVIDIA Jetson Nano (Developer Kit Version)
+ L4T 32.4.4 [ JetPack 4.4.1 ]
+   Ubuntu 18.04.5 LTS
+   Kernel Version: 4.9.140-tegra
+ CUDA 10.2.89
+   CUDA Architecture: 5.3
+ OpenCV version: 4.1.1
+   OpenCV Cuda: NO
+ CUDNN: 8.0.0.180
+ TensorRT: 7.1.3.0
+ Vision Works: 1.6.0.501
+ VPI: 4.4.1-b50
+ Vulcan: 1.2.70
+```
+
+
+

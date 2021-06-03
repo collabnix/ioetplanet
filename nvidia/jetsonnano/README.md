@@ -197,5 +197,10 @@ NVIDIA Jetson Nano (Developer Kit Version)
  Vulcan: 1.2.70
 ```
 
+## Verify Docker runtime
 
 
+```
+docker info | grep runtime
+ Runtimes: nvidia runc io.containerd.runc.v2 io.containerd.runtime.v1.linux
+```

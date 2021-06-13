@@ -1,4 +1,4 @@
-# Demo for Dockercon
+# Demo
 
 - Verifying if Docker 20.10.3 is installed 
 - Verifying if Sensor is detected

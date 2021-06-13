@@ -39,6 +39,17 @@ Everything and anything you want to know about NVIDIA Jetson Nano, Docker & K3s 
 
 ![My Image](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonnano/Screenshot%202020-09-16%20at%2010.29.02%20AM.png)
 
+```
+sudo lshw -C system
+pico2                       
+    description: Computer
+    product: NVIDIA Jetson Nano Developer Kit
+    serial: 1422919082257
+    width: 64 bits
+    capabilities: smp cp15_barrier setend swp
+ ```
+
+
 ### 2. Verifying if it is shipped with Docker Binaries
 
 ```

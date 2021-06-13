@@ -393,8 +393,165 @@ Result = PASS
 
 ```
 
+### Test 3: Running deviceQuery on the K3s cluster
+
+```
+pico@pico2:~/test$ cat pod_deviceQuery.yaml 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: devicequery
+spec:
+  containers:
+    - name: nvidia
+      image: ajeetraina/jetson_devicequery:latest
+
+      command: [ "./deviceQuery" ]
+pico@pico2:~/test$
+```
 
 
+```
+sudo KUBECONFIG=/etc/rancher/k3s/k3s.yaml kubectl apply -f ./pod_deviceQuery.yaml
+pod/devicequery created
+```
+
+```
+pico@pico2:~/test$ sudo KUBECONFIG=/etc/rancher/k3s/k3s.yaml kubectl describe pod devicequery
+Name:         devicequery
+Namespace:    default
+Priority:     0
+Node:         pico4/192.168.1.163
+Start Time:   Sun, 13 Jun 2021 09:16:44 -0700
+Labels:       <none>
+Annotations:  <none>
+Status:       Pending
+IP:           
+IPs:          <none>
+Containers:
+  nvidia:
+    Container ID:  
+    Image:         ajeetraina/jetson_devicequery:latest
+    Image ID:      
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      ./deviceQuery
+    State:          Waiting
+      Reason:       ContainerCreating
+    Ready:          False
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-mcrmv (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             False 
+  ContainersReady   False 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-mcrmv:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  78s   default-scheduler  Successfully assigned default/devicequery to pico4
+  Normal  Pulling    77s   kubelet            Pulling image "ajeetraina/jetson_devicequery:latest"
+pico@pico2:~/test$
+```
 
 
+```
+cat pod_deviceQuery_jetson4.yaml 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: devicequery
+spec:
+  nodeName: pico4
+  containers:
+    - name: nvidia
+      image: ajeetraina/jetson_devicequery:latest
+      command: [ "./deviceQuery" ]
+pico@pico2:~/test$ 
+```
 
+```
+pico@pico2:~/test$ sudo KUBECONFIG=/etc/rancher/k3s/k3s.yaml kubectl describe pod devicequery
+Name:         devicequery
+Namespace:    default
+Priority:     0
+Node:         pico4/192.168.1.163
+Start Time:   Sun, 13 Jun 2021 09:16:44 -0700
+Labels:       <none>
+Annotations:  <none>
+Status:       Running
+IP:           10.42.1.3
+IPs:
+  IP:  10.42.1.3
+Containers:
+  nvidia:
+    Container ID:  containerd://fd502d6bfa55e2f80b2d50bc262e6d6543fd8d09e9708bb78ecec0b2e09621c3
+    Image:         ajeetraina/jetson_devicequery:latest
+    Image ID:      docker.io/ajeetraina/jetson_devicequery@sha256:dfeaad4046f78871d3852e5d5fb8fa848038c57c34c6554c6c97a00ba120d550
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      ./deviceQuery
+    State:          Waiting
+      Reason:       CrashLoopBackOff
+    Last State:     Terminated
+      Reason:       Error
+      Exit Code:    1
+      Started:      Sun, 13 Jun 2021 09:21:50 -0700
+      Finished:     Sun, 13 Jun 2021 09:21:50 -0700
+    Ready:          False
+    Restart Count:  5
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-mcrmv (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             False 
+  ContainersReady   False 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-mcrmv:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                    From               Message
+  ----     ------     ----                   ----               -------
+  Normal   Scheduled  7m51s                  default-scheduler  Successfully assigned default/devicequery to pico4
+  Normal   Pulled     5m45s                  kubelet            Successfully pulled image "ajeetraina/jetson_devicequery:latest" in 2m5.699757621s
+  Normal   Pulled     5m43s                  kubelet            Successfully pulled image "ajeetraina/jetson_devicequery:latest" in 1.000839703s
+  Normal   Pulled     5m29s                  kubelet            Successfully pulled image "ajeetraina/jetson_devicequery:latest" in 967.072951ms
+  Normal   Pulled     4m59s                  kubelet            Successfully pulled image "ajeetraina/jetson_devicequery:latest" in 1.025604394s
+  Normal   Created    4m59s (x4 over 5m45s)  kubelet            Created container nvidia
+  Normal   Started    4m59s (x4 over 5m45s)  kubelet            Started container nvidia
+  Warning  BackOff    4m20s (x8 over 5m42s)  kubelet            Back-off restarting failed container
+  Normal   Pulling    2m47s (x6 over 7m51s)  kubelet            Pulling image "ajeetraina/jetson_devicequery:latest"
+```
+
+
+```
+pico@pico2:~/test$ sudo KUBECONFIG=/etc/rancher/k3s/k3s.yaml kubectl apply -f ./pod_deviceQuery_jetson4.yaml
+pod/devicequery configured
+```

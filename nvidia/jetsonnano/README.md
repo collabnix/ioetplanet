@@ -294,5 +294,107 @@ deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 10.2, CUDA Runtime Vers
 Result = PASS
 ```
 
+Test 2: Running deviceQuery on containerd with GPU support
+
+
+Since K3s uses containerd as its runtime by default, we will use the ctr command line to test and deploy the deviceQuery image we pushed on containerd with this script:
+
+```
+#!/bin/bash
+IMAGE=ajeetraina/jetson_devicequery:latest
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+ctr i pull docker.io/${IMAGE}
+ctr run --rm --gpus 0 --tty docker.io/${IMAGE} deviceQuery
+```
+
+
+## Execute the script
+
+```
+sudo sh usectr.sh
+```
+
+```
+sudo sh usectr.sh 
+docker.io/ajeetraina/jetson_devicequery:latest:                                   resolved       |++++++++++++++++++++++++++++++++++++++| 
+manifest-sha256:dfeaad4046f78871d3852e5d5fb8fa848038c57c34c6554c6c97a00ba120d550: done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:4438ebff930fb27930d802553e13457783ca8a597e917c030aea07f8ff6645c0:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:b1cdeb9e69c95684d703cf96688ed2b333a235d5b33f0843663ff15f62576bd4:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:bf60857fb4964a3e3ce57a900bbe47cd1683587d6c89ecbce4af63f98df600aa:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:0aac5305d11a81f47ed76d9663a8d80d2963b61c643acfce0515f0be56f5e301:    done           |++++++++++++++++++++++++++++++++++++++| 
+config-sha256:37987db6d6570035e25e713f41e665a6d471d25056bb56b4310ed1cb1d79a100:   done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:f0f57d03cad8f8d69b1addf90907b031ccb253b5a9fc5a11db83c51aa311cbfb:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:08c23323368d4fde5347276d543c500e1ff9b712024ca3f85172018e9440d8b0:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:04da93b342eb651d6b94c74a934a3290697573a907fa0a06067b538095601745:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:f84ceb6e8887e9b3b454813459ee97c2b9730869dbd37d4cca4051958b7a5a36:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:93752947af53e2a3225e145b359b956df36e20521b5dde0fe6d3fb92fd2a9538:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:b235194751dee33624fc154603f7e25ecdfbb02538fb7d55fa796df9afa95fee:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:905b1329c1d473c79650e33b882d980b3522fb72e58ecd3456c4fb3c4039fe92:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:8931d5ba88b488c949f77f990e8f9198b153ceb71afd0369eac9c39beb38f2d6:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:cfb2938be99fb944fe31165bdf44532a5536865ce53b12eb7758d1e2a51ad33e:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:606a67bb8db9a1111022bdc6406442e11c1a66653136c5c777114bf67b61038a:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:2f37138d1c8ac71d9314a0f8996ba69579bbc6ee6a57440557bc7eef486ed292:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:9ce7ce1da17c2b8149573d1d73132f61a73083f0cd498eeb7a0da404fd77db14:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:a36863a728ec9221c83c745f40511946dfd63beca0f10c9afcc774ef7a98e420:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:86dd6e5994e2c15f2783d8d543327479ccee7f3b20023dd962fdb9a211071e16:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:f5299db1221c515de91f59d84b79f2f839f9c94a5d0cc7fad04134e23ec9b88a:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:15a5811e1a7bf377cbac066b04e0b36b4c1a41ca63eb3c67c17b734577f6beea:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:cb893097de39451407d7167b312ec56eaea80baa041877af8239dbe833fa044b:    done           |++++++++++++++++++++++++++++++++++++++| 
+elapsed: 81.4s                                                                    total:  305.5  (3.8 MiB/s)                                       
+unpacking linux/arm64/v8 sha256:dfeaad4046f78871d3852e5d5fb8fa848038c57c34c6554c6c97a00ba120d550...
+
+done
+
+./deviceQuery Starting...
+
+ CUDA Device Query (Runtime API) version (CUDART static linking)
+
+Detected 1 CUDA Capable device(s)
+
+Device 0: "NVIDIA Tegra X1"
+  CUDA Driver Version / Runtime Version          10.2 / 10.2
+  CUDA Capability Major/Minor version number:    5.3
+  Total amount of global memory:                 3963 MBytes (4155383808 bytes)
+  ( 1) Multiprocessors, (128) CUDA Cores/MP:     128 CUDA Cores
+  GPU Max Clock rate:                            922 MHz (0.92 GHz)
+  Memory Clock rate:                             13 Mhz
+  Memory Bus Width:                              64-bit
+  L2 Cache Size:                                 262144 bytes
+  Maximum Texture Dimension Size (x,y,z)         1D=(65536), 2D=(65536, 65536), 3D=(4096, 4096, 4096)
+  Maximum Layered 1D Texture Size, (num) layers  1D=(16384), 2048 layers
+  Maximum Layered 2D Texture Size, (num) layers  2D=(16384, 16384), 2048 layers
+  Total amount of constant memory:               65536 bytes
+  Total amount of shared memory per block:       49152 bytes
+  Total number of registers available per block: 32768
+  Warp size:                                     32
+  Maximum number of threads per multiprocessor:  2048
+  Maximum number of threads per block:           1024
+  Max dimension size of a thread block (x,y,z): (1024, 1024, 64)
+  Max dimension size of a grid size    (x,y,z): (2147483647, 65535, 65535)
+  Maximum memory pitch:                          2147483647 bytes
+  Texture alignment:                             512 bytes
+  Concurrent copy and kernel execution:          Yes with 1 copy engine(s)
+  Run time limit on kernels:                     Yes
+  Integrated GPU sharing Host Memory:            Yes
+  Support host page-locked memory mapping:       Yes
+  Alignment requirement for Surfaces:            Yes
+  Device has ECC support:                        Disabled
+  Device supports Unified Addressing (UVA):      Yes
+  Device supports Compute Preemption:            No
+  Supports Cooperative Kernel Launch:            No
+  Supports MultiDevice Co-op Kernel Launch:      No
+  Device PCI Domain ID / Bus ID / location ID:   0 / 0 / 0
+  Compute Mode:
+     < Default (multiple host threads can use ::cudaSetDevice() with device simultaneously) >
+
+deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 10.2, CUDA Runtime Version = 10.2, NumDevs = 1
+Result = PASS
+
+
+```
+
+
+
+
 
 

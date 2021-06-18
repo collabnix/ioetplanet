@@ -49,6 +49,20 @@ pico2
     capabilities: smp cp15_barrier setend swp
  ```
 
+### CUDA Compiler and Libraries
+
+```
+ajeetraina@ajeetraina-desktop:~/meetup$ nvcc --version
+-bash: nvcc: command not found
+ajeetraina@ajeetraina-desktop:~/meetup$ export PATH=${PATH}:/usr/local/cuda/bin
+ajeetraina@ajeetraina-desktop:~/meetup$ export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/cuda/lib64
+ajeetraina@ajeetraina-desktop:~/meetup$ source ~/.bashrc
+ajeetraina@ajeetraina-desktop:~/meetup$ nvcc --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2019 NVIDIA Corporation
+Built on Wed_Oct_23_21:14:42_PDT_2019
+Cuda compilation tools, release 10.2, V10.2.89
+```
 
 ### 2. Verifying if it is shipped with Docker Binaries
 

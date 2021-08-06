@@ -100,6 +100,15 @@ $ git clone https://github.com/redis-developer/redis-datasets
 $ cd redis-datasets/redistimeseries/realtime-sensor-jetson
 ```
 
+## Loading the modules
+
+```
+pip3 install bme680
+pip3 install smbus
+pip3 install redis
+```
+
+
 ## Running Sensorload Script
 
 ```

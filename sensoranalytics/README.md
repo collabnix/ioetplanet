@@ -49,6 +49,8 @@ Server: Docker Engine - Community
 
 ## Verifying if Sensor is detected
 
+The i2cdetect is a userspace program to scan an I2C bus for devices. It outputs a table with the list of detected devices on the specified bus
+
 ```
  i2cdetect -r -y 1
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f

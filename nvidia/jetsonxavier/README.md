@@ -200,3 +200,38 @@ Ensure that /etc/docker/daemon.json with the path to nvidia-container-runtime:
 ```
 sudo pkill -SIGHUP dockerd
 ```
+
+## Running the DeepStreaming Container
+
+To run the container:
+
+Allow external applications to connect to the host's X display:
+
+```
+xhost +
+```
+
+## Run the docker container using the nvidia-docker (use the desired container tag in the command line below):
+
+```
+sudo docker run -it --rm --net=host --runtime nvidia  -e DISPLAY=$DISPLAY -w /opt/nvidia/deepstream/deepstream-5.1 -v /tmp/.X11-unix/:/tmp/.X11-unix nvcr.io/nvidia/deepstream-l4t:5.1-21.02-base
+```
+
+Option explained:
+
+-it means run in interactive mode
+
+--rm will delete the container when finished
+
+-v is the mounting directory, and used to mount host's X11 display in the container filesystem
+
+5.1-21.02-samples is the tag for the image; 21.02 refers to the version of the container for that release; samples refers to the container variant
+
+user can mount additional directories (using -v option) as required containing configuration file and models for access by applications executed from within the container
+
+Additionally, --cap-add SYSLOG option needs to be included to enable usage of the nvds_logger functionality inside the container.
+
+See /opt/nvidia/deepstream/deepstream-5.1/README inside the container for deepstream-app usage information. Additional argument to add to above docker command for accessing CSI Camera from Docker: -v /tmp/argus_socket:/tmp/argus_socket For USB Camera additional argument --device /dev/video
+
+
+

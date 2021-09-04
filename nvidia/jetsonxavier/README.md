@@ -71,7 +71,7 @@ NVIDIA Jetson AGX Xavier [16GB]
  Vulcan: 1.1.70
 xavier@xavier-desktop:~/jetsonUtilities$ 
 ```
-
+## Installing Jtop
 
 ```
 sudo -H pip install -U jetson-stats

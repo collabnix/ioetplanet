@@ -161,3 +161,42 @@ declare -x JETSON_VPI="NOT_INSTALLED"
 declare -x JETSON_VULKAN_INFO="1.1.70"
 xavier@xavier-desktop:~$ 
 ```
+
+
+## Installing nvidia-docker
+
+
+```
+sudo apt install nvidia-docker2
+```
+
+## Install nvidia-container-runtime package:
+
+```
+sudo yum install nvidia-container-runtime
+```
+
+## Update docker daemon
+
+```
+sudo vim /etc/docker/daemon.json
+```
+
+Ensure that /etc/docker/daemon.json with the path to nvidia-container-runtime:
+
+```
+{
+    "runtimes": {
+        "nvidia": {
+            "path": "/usr/bin/nvidia-container-runtime",
+            "runtimeArgs": []
+        }
+    }
+}
+```
+
+## Make docker update the path:
+
+```
+sudo pkill -SIGHUP dockerd
+```

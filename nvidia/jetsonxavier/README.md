@@ -203,6 +203,25 @@ sudo pkill -SIGHUP dockerd
 
 ## Running the DeepStreaming Container
 
+- DeepStream 5.1 provides Docker containers for both dGPU and Jetson platforms. 
+- These containers provide a convenient, out-of-the-box way to deploy DeepStream applications by packaging all associated dependencies within the container. 
+- The associated Docker images are hosted on the NVIDIA container registry in the NGC web portal at https://ngc.nvidia.com. 
+- They use the nvidia-docker package, which enables access to the required GPU resources from containers. 
+
+## Please Note:
+
+The dGPU container is called deepstream and the Jetson container is called deepstream-l4t. 
+
+- Unlike the container in DeepStream 3.0, the dGPU DeepStream 5.1 container supports DeepStream application development within the container. 
+- It contains the same build tools and development libraries as the DeepStream 5.1 SDK. 
+- In a typical scenario, you build, execute and debug a DeepStream application within the DeepStream container. 
+- Once your application is ready, you can use the DeepStream 5.1 container as a base image to create your own Docker container holding your application files (binaries, libraries, models, configuration file, etc.,)
+
+![image](https://user-images.githubusercontent.com/34368930/132099794-0fc43284-09b4-4331-b198-471f06ab5ab0.png)
+
+
+This section describes the features supported by the DeepStream Docker container for the dGPU and Jetson platforms.
+
 To run the container:
 
 Allow external applications to connect to the host's X display:
@@ -214,7 +233,7 @@ xhost +
 ## Run the docker container using the nvidia-docker (use the desired container tag in the command line below):
 
 ```
-sudo docker run -it --rm --net=host --runtime nvidia  -e DISPLAY=$DISPLAY -w /opt/nvidia/deepstream/deepstream-5.1 -v /tmp/.X11-unix/:/tmp/.X11-unix nvcr.io/nvidia/deepstream-l4t:5.1-21.02-base
+sudo docker run -it --rm --net=host --runtime nvidia  -e DISPLAY=$DISPLAY -w /opt/nvidia/deepstream/deepstream-5.1 -v /tmp/.X11-unix/:/tmp/.X11-unix nvcr.io/nvidia/deepstream-l4t:5.1-21.02-samples
 ```
 
 Option explained:
@@ -233,5 +252,12 @@ Additionally, --cap-add SYSLOG option needs to be included to enable usage of th
 
 See /opt/nvidia/deepstream/deepstream-5.1/README inside the container for deepstream-app usage information. Additional argument to add to above docker command for accessing CSI Camera from Docker: -v /tmp/argus_socket:/tmp/argus_socket For USB Camera additional argument --device /dev/video
 
+
+```
+sudo docker ps
+CONTAINER ID   IMAGE                                             COMMAND       CREATED          STATUS         PORTS     NAMES
+ad38d8f4612d   nvcr.io/nvidia/deepstream-l4t:5.1-21.02-samples   "/bin/bash"   10 seconds ago   Up 9 seconds             romantic_hopper
+xavier@xavier-desktop:~$ 
+```
 
 

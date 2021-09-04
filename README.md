@@ -30,6 +30,13 @@
   - [How to enable RDP on Jetson Nano](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonnano/enable-rdp.md)
 
 
+- [NVIDIA Jetson AGX Xavier](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonxavier/README.md)
+    - [Getting Started](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonxavier/README.md#getting-started-with-jetson-agx-xavier)
+    - [Identifying the Jetson Board](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonxavier/README.md#identify-the-jetson-board)
+    - [Running Docker on Xavier](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonxavier/README.md#installing-docker)
+    - [Running JTOP on Xavier](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonxavier/README.md#installing-jtop)
+    - [Running DeepStreaming on Xavier](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonxavier/README.md#running-the-deepstreaming-container)
+
 - [Pine64](https://github.com/collabnix/ioetplanet/blob/master/pine64/overview/README.md)
 
     - [An Overview of $200 Pinebook Pro ARM Laptop](https://github.com/collabnix/ioetplanet/blob/master/pine64/overview/README.md) 

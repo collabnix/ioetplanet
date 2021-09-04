@@ -106,21 +106,58 @@ Please logout or reboot this board.
 
 
 
-## Running Jtop inside Docker container
+```
+xavier@xavier-desktop:~$ jetson_release -v
+ - NVIDIA Jetson AGX Xavier [16GB]
+   * Jetpack 4.3 [L4T 32.3.1]
+   * NV Power Mode: MODE_15W - Type: 2
+   * jetson_stats.service: active
+ - Board info:
+   * Type: AGX Xavier [16GB]
+   * SOC Family: tegra194 - ID:25
+   * Module: P2888-0001 - Board: P2822-0000
+   * Code Name: galen
+   * CUDA GPU architecture (ARCH_BIN): 7.2
+   * Serial Number: 1420921055981
+ - Libraries:
+   * CUDA: NOT_INSTALLED
+   * cuDNN: NOT_INSTALLED
+   * TensorRT: NOT_INSTALLED
+   * Visionworks: NOT_INSTALLED
+   * OpenCV: NOT_INSTALLED compiled CUDA: NO
+   * VPI: NOT_INSTALLED
+   * Vulkan: 1.1.70
+ - jetson-stats:
+   * Version 3.1.1
+   * Works on Python 2.7.17
+xavier@xavier-desktop:~$ 
 
 ```
-xavier@xavier-desktop:~$ sudo docker run --rm -it --gpus all \
->                    -v /run/jtop.sock:/run/jtop.sock ajeetraina/jetson-stats-nano jtop
-Unable to find image 'ajeetraina/jetson-stats-nano:latest' locally
-latest: Pulling from ajeetraina/jetson-stats-nano
-595b0fe564bb: Pull complete 
-0fe8a6b629fd: Pull complete 
-1105f4e4114d: Pull complete 
-71e7b9c27f04: Pull complete 
-c3ff736867a8: Pull complete 
-1b2993689e65: Pull complete 
-Digest: sha256:771ecd2ef10755e4ab398f9d230c3a8904c2621fee5bbb1066085c9478caa903
-Status: Downloaded newer image for ajeetraina/jetson-stats-nano:latest
-docker: Error response from daemon: could not select device driver "" with capabilities: [[gpu]].
-ERRO[0020] error waiting for container: context canceled 
+## Jetson variables
+
+```
+export | grep JETSON
+declare -x JETSON_BOARD="P2822-0000"
+declare -x JETSON_BOARDIDS=""
+declare -x JETSON_CHIP_ID="25"
+declare -x JETSON_CODENAME="galen"
+declare -x JETSON_CUDA="NOT_INSTALLED"
+declare -x JETSON_CUDA_ARCH_BIN="7.2"
+declare -x JETSON_CUDNN="NOT_INSTALLED"
+declare -x JETSON_JETPACK="4.3"
+declare -x JETSON_L4T="32.3.1"
+declare -x JETSON_L4T_RELEASE="32"
+declare -x JETSON_L4T_REVISION="3.1"
+declare -x JETSON_MACHINE="NVIDIA Jetson AGX Xavier [16GB]"
+declare -x JETSON_MODULE="P2888-0001"
+declare -x JETSON_OPENCV="NOT_INSTALLED"
+declare -x JETSON_OPENCV_CUDA="NO"
+declare -x JETSON_SERIAL_NUMBER="1420921055981"
+declare -x JETSON_SOC="tegra194"
+declare -x JETSON_TENSORRT="NOT_INSTALLED"
+declare -x JETSON_TYPE="AGX Xavier [16GB]"
+declare -x JETSON_VISIONWORKS="NOT_INSTALLED"
+declare -x JETSON_VPI="NOT_INSTALLED"
+declare -x JETSON_VULKAN_INFO="1.1.70"
+xavier@xavier-desktop:~$ 
 ```

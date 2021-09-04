@@ -260,4 +260,102 @@ ad38d8f4612d   nvcr.io/nvidia/deepstream-l4t:5.1-21.02-samples   "/bin/bash"   1
 xavier@xavier-desktop:~$ 
 ```
 
+```
+root@xavier-desktop:/opt/nvidia/deepstream/deepstream-5.1# tree -L 2
+.
+|-- LICENSE.txt
+|-- LicenseAgreement.pdf
+|-- README
+|-- bin
+|   |-- deepstream-app
+|   |-- deepstream-appsrc-test
+|   |-- deepstream-audio
+|   |-- deepstream-dewarper-app
+|   |-- deepstream-gst-metadata-app
+|   |-- deepstream-image-decode-app
+|   |-- deepstream-image-meta-test
+|   |-- deepstream-infer-tensor-meta-app
+|   |-- deepstream-mrcnn-app
+|   |-- deepstream-nvdsanalytics-test
+|   |-- deepstream-nvof-app
+|   |-- deepstream-opencv-test
+|   |-- deepstream-perf-demo
+|   |-- deepstream-segmentation-app
+|   |-- deepstream-test1-app
+|   |-- deepstream-test2-app
+|   |-- deepstream-test3-app
+|   |-- deepstream-test4-app
+|   |-- deepstream-test5-app
+|   |-- deepstream-testsr-app
+|   |-- deepstream-transfer-learning-app
+|   `-- deepstream-user-metadata-app
+|-- doc
+|   `-- nvidia-tegra
+|-- install.sh
+|-- lib
+|   |-- gst-plugins
+|   |-- libiothub_client.so
+|   |-- libiothub_client.so.1 -> libiothub_client.so
+|   |-- libnvbufsurface.so -> /usr/lib/aarch64-linux-gnu/tegra/libnvbufsurface.so
+|   |-- libnvbufsurftransform.so -> /usr/lib/aarch64-linux-gnu/tegra/libnvbufsurftransform.so
+|   |-- libnvds_amqp_proto.so
+|   |-- libnvds_audiotransform.so
+|   |-- libnvds_azure_edge_proto.so
+|   |-- libnvds_azure_proto.so
+|   |-- libnvds_batch_jpegenc.so
+|   |-- libnvds_csvparser.so
+|   |-- libnvds_dewarper.so
+|   |-- libnvds_dsanalytics.so
+|   |-- libnvds_infer.so
+|   |-- libnvds_infer_custom_parser_audio.so
+|   |-- libnvds_infer_server.so
+|   |-- libnvds_infercustomparser.so
+|   |-- libnvds_inferutils.so
+|   |-- libnvds_kafka_proto.so
+|   |-- libnvds_logger.so
+|   |-- libnvds_meta.so
+|   |-- libnvds_mot_iou.so
+|   |-- libnvds_mot_klt.so
+|   |-- libnvds_msgbroker.so
+|   |-- libnvds_msgconv.so -> libnvds_msgconv.so.1.0.0
+|   |-- libnvds_msgconv.so.1.0.0
+|   |-- libnvds_msgconv_audio.so -> libnvds_msgconv_audio.so.1.0.0
+|   |-- libnvds_msgconv_audio.so.1.0.0
+|   |-- libnvds_nvdcf.so
+|   |-- libnvds_nvtxhelper.so
+|   |-- libnvds_opticalflow_dgpu.so
+|   |-- libnvds_opticalflow_jetson.so
+|   |-- libnvds_osd.so
+|   |-- libnvds_redis_proto.so
+|   |-- libnvds_utils.so
+|   |-- libnvdsgst_helper.so
+|   |-- libnvdsgst_inferbase.so
+|   |-- libnvdsgst_meta.so
+|   |-- libnvdsgst_smartrecord.so
+|   |-- libnvdsgst_tensor.so
+|   |-- libtritonserver.so
+|   |-- pyds.so
+|   |-- setup.py
+|   `-- triton_backends
+|-- samples
+|   |-- configs
+|   |-- models
+|   |-- prepare_classification_test_video.sh
+|   |-- prepare_ds_trtis_model_repo.sh
+|   |-- streams
+|   `-- trtis_model_repo
+|-- sources
+|   |-- SONYCAudioClassifier
+|   |-- apps
+|   |-- gst-plugins
+|   |-- includes
+|   |-- libs
+|   |-- objectDetector_FasterRCNN
+|   |-- objectDetector_SSD
+|   |-- objectDetector_Yolo
+|   `-- tools
+|-- uninstall.sh
+`-- version
+```
+
 

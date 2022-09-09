@@ -105,6 +105,7 @@ $ cd redis-datasets/redistimeseries/realtime-sensor-jetson
 ```
 pip3 install bme680
 pip3 install smbus
+pip3 install gunicorn
 pip3 install redis
 ```
 

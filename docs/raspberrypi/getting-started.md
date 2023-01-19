@@ -1,8 +1,11 @@
 # Getting Started with Rasperry Pi
 
-![image](https://user-images.githubusercontent.com/34368930/213495942-5d79d064-3ce0-49d2-a9eb-b44947aed8d7.png)
 
 
+
+Raspberry Pi boards today are not just limited to hobbyists and makers. It is heavily used in the IoT industry as a preferable solution for Linux Edge computing. The Raspberry Pi is a tiny computer about the size of a deck of cards. It uses what’s called a system on a chip, which integrates the CPU and GPU in a single integrated circuit, with the RAM, USB ports, and other components soldered onto the board for an all-in-one package. One can use Raspberry Pi to learn programming skills, build hardware projects, do home automation, implement Kubernetes clusters and Edge computing, and even use them in industrial applications. 
+
+![image](https://user-images.githubusercontent.com/34368930/213512727-55a6c943-b272-4ed8-a105-42ae3cb212ae.png)
 
 Raspberry Pi boards today are not just limited to hobbyists and makers. It is heavily used in the IoT industry as a preferable solution for Linux Edge computing. The Raspberry Pi is a tiny computer about the size of a deck of cards. It uses what’s called a system on a chip, which integrates the CPU and GPU in a single integrated circuit, with the RAM, USB ports, and other components soldered onto the board for an all-in-one package. One can use Raspberry Pi to learn programming skills, build hardware projects, do home automation, implement Kubernetes clusters and Edge computing, and even use them in industrial applications. 
 
@@ -16,6 +19,12 @@ Raspberry Pi boards today are not just limited to hobbyists and makers. It is he
 - Internet Connectivity(Wifi/Broadband/Tethering using Mobile) – to download Docker 1.12.1 package
 - Keyboard & mouse connected to Pi’s USB ports
 - Raspberry Pi OS (previously called Raspbian) is an official operating system for all models of the Raspberry Pi. We will be using Raspberry Pi Imager for an easy way to install Raspberry Pi OS on top of Raspberry Pi:
+
+
+Insert the microSD card into your Pi box. Now connect the HDMI cable  from one end of Pi’s HDMI slot to your TV or display unit and mobile charger(recommended 5.1V@1.5A) as shown:
+
+![image](https://user-images.githubusercontent.com/34368930/213512832-43cf2b50-4616-459a-bf07-25f8ce8ca131.png)
+
 
 Visit https://www.raspberrypi.org/downloads/raspberry-pi-os/ and download Raspberry Pi OS by running the below CLI:
 
@@ -57,7 +66,7 @@ Once the write is successful, you can remove the SD card from card reader and th
 SSH to Raspberry Pi nodes
 
 ```
-$ssh pi@192.168.1.7$ssh pi @192.168.1.4
+$ssh pi @192.168.1.4
 pi@raspberrypi:~ $ uname -arn
 Linux raspberrypi 4.19.118-v7+ #1311 SMP Mon Apr 27 14:21:24 BST 2022 armv7l GNU/Linuxpi@raspberrypi:~ $
 ```

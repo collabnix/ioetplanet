@@ -1,5 +1,8 @@
 # Install Docker on Rasperry Pi
 
+![image](https://user-images.githubusercontent.com/34368930/213495942-5d79d064-3ce0-49d2-a9eb-b44947aed8d7.png)
+
+
 
 Raspberry Pi boards today are not just limited to hobbyists and makers. It is heavily used in the IoT industry as a preferable solution for Linux Edge computing. The Raspberry Pi is a tiny computer about the size of a deck of cards. It uses what’s called a system on a chip, which integrates the CPU and GPU in a single integrated circuit, with the RAM, USB ports, and other components soldered onto the board for an all-in-one package. One can use Raspberry Pi to learn programming skills, build hardware projects, do home automation, implement Kubernetes clusters and Edge computing, and even use them in industrial applications. 
 
@@ -35,6 +38,10 @@ In the first part of this blog post, I will show you how to install the latest v
 
 Visit https://www.raspberrypi.org/downloads/raspberry-pi-os/ and download Raspberry Pi OS by running the below CLI:
 
+![image](https://user-images.githubusercontent.com/34368930/213496059-42b7a361-4d3e-4cad-a9a5-0d40355bd305.png)
+
+Visit https://www.raspberrypi.org/downloads/raspberry-pi-os/ and download Raspberry Pi OS by running the below CLI:
+
 
 In case you are in hurry, just run the below command and you should be good to go:
 
@@ -46,14 +53,24 @@ wget https://downloads.raspberrypi.org/raspios_full_armhf_latest﻿
 
 Next, we will be installing Raspberry Pi Imager. You can download via https://www.raspberrypi.org/blog/raspberry-pi-imager-imaging-utility/
 
+![image](https://user-images.githubusercontent.com/34368930/213496144-ab75ac09-9825-4c0f-ba9b-362b421107bb.png)
+
+
 
 All you need to do is choose the right operating system and SD card, and it should be able to flash OS on your SD card.
+
+![image](https://user-images.githubusercontent.com/34368930/213496175-1769771c-21e2-47d8-9dfb-e2f0930bac90.png)
 
 
 Click “Write” and it’s time to grab a coffee.
 
+![image](https://user-images.githubusercontent.com/34368930/213496214-9e30a0d3-a081-490f-baa5-ae620cf3539e.png)
+
+
 
 Once the write is successful, you can remove the SD card from card reader and then insert it into Raspberry Pi SD card slot.
+
+![image](https://user-images.githubusercontent.com/34368930/213496254-bad1b6d7-41af-4852-896d-ef2334136bff.png)
 
 
 SSH to Raspberry Pi nodes

@@ -3,6 +3,8 @@ nav:
   - Home: index.md
   - Raspberry Pi:
       - Installing Docker on Raspberry Pi: raspberrypi/docker-on-raspberrypi.md
+      - Projects:
+          - Pico Project: raspberrypi/projects/Pico/index.md
   - NVIDIA Jetson Nano:
      - Installing Docker on NVIDIA Jetson: nvidia/docker-on-jetson-nano.md
 

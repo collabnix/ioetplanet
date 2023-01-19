@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "docker"
+version = "0.1.0"
+description = ""
+authors = ["Ajeet Singh Raina <ajeetraina@Docker-Ajeet-Singh-Rainas-MacBook-Pro.local>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+mkdocs = "^1.4.2"
+mkdocs-material = "^9.0.5"
+pymdown-extensions = "^9.9.1"
+fontawesome-markdown = "^0.2.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

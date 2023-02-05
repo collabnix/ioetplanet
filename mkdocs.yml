@@ -15,4 +15,9 @@ nav:
      - Getting Started: nvidia/jetson-xavier.md
      - Installing Docker on NVIDIA Jetson Xavier: nvidia/docker-on-xavier.md
 
+  - DJI Tello Drone:
+     - Getting Started: tellodrone/getting-started.md
+     - Using Python: tellodrone/python.md
+
+
 theme: material

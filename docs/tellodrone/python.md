@@ -62,7 +62,7 @@ tello.takeoff()
 cv2.imwrite("picture.png", frame_read.frame)
 
 tello.land()
-``
+```
 
 ## Step 3. Recording a Video
 
@@ -109,7 +109,6 @@ recorder.join()
 ## Step 4. Control the drone using Keyboard
 
 ```
-# source https://github.com/damiafuentes/DJITelloPy
 from djitellopy import Tello
 import cv2, math, time
 

@@ -30,3 +30,17 @@ print(data.decode(encoding='utf-8'))
 
 This script uses the socket library in Python to create a UDP socket and send commands to the Tello drone. The script first binds the socket to the Tello's IP address and port, then sends the command command to enter command mode. Next, it sends the set camera 0 command to configure the camera, and finally sends the camera? command to fetch the current camera values. The received data is decoded and printed to the console.
 
+## Build the Docker image:
+
+```
+docker build -t tello-script .
+```
+
+## Run the Docker container:
+
+```
+docker run --name tello-container -d tello-script
+```
+
+This will create a Docker image with the necessary dependencies to run the Python script and run a Docker container from the image. The script will be executed when the container starts.
+

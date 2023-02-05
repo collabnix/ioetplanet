@@ -5,10 +5,10 @@ FROM python:3.8-slim-buster
 WORKDIR /app
 
 # Copy the script to the image
-COPY script.py .
+COPY tello.py .
 
 # Install the necessary dependencies
 RUN pip install python-tello
 
 # Set the command to run when the container starts
-CMD ["python", "script.py"]
+CMD ["python", "tello.py"]

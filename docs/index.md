@@ -25,3 +25,7 @@
 
 - [Getting Started with DJI Tello Drone](/tellodrone/getting-started/)
 - [Control DJI Tello Drone using Python](/tellodrone/python/)
+
+## DJI Robomaster S1
+
+- [Getting Started with Robomaster](/robomaster/getting-started/)

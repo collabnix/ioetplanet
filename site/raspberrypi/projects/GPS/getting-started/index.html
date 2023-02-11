@@ -1,0 +1,1490 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../Pico/">
+      
+      
+        <link rel="next" href="../../../../nvidia/getting-started/">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.5">
+    
+    
+      
+        <title>Using GPS - IoETPlanet</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#table-of-contents" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="IoETPlanet" class="md-header__button md-logo" aria-label="IoETPlanet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IoETPlanet
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Using GPS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="IoETPlanet" class="md-nav__button md-logo" aria-label="IoETPlanet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IoETPlanet
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="true">
+          Raspberry Pi
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Raspberry Pi" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Raspberry Pi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../docker-on-raspberrypi/" class="md-nav__link">
+        Installing Docker on Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" tabindex="0" aria-expanded="true">
+          Projects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Projects" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Pico/" class="md-nav__link">
+        Pico Project
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Using GPS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Using GPS
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intent" class="md-nav__link">
+    Intent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    Hardware
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    Software
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-the-gps-module-to-the-raspberry-pi" class="md-nav__link">
+    Connect the GPS module to the Raspberry PI.
+  </a>
+  
+    <nav class="md-nav" aria-label="Connect the GPS module to the Raspberry PI.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#turn-off-the-serial-console" class="md-nav__link">
+    Turn Off the Serial Console
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-backup-the-file-cmdlinetxt" class="md-nav__link">
+    Step 1. Backup the file cmdline.txt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-edit-cmdlinttxt-and-remove-the-serial-interface" class="md-nav__link">
+    Step 2. Edit cmdlint.txt and remove the serial interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-delete-consolettyama0115200" class="md-nav__link">
+    Step 3. Delete console=ttyAMA0,115200
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-edit-etcinittab" class="md-nav__link">
+    Step 4. Edit /etc/inittab
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-find-ttyama0" class="md-nav__link">
+    Step 5. Find ttyAMA0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-test-the-gps" class="md-nav__link">
+    Step 6. Test the GPS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-start-the-serial-port" class="md-nav__link">
+    Step 7. Start the serial port:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-final-results" class="md-nav__link">
+    Step 8. Final Results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetching-the-values" class="md-nav__link">
+    Fetching the Values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clone-the-repository" class="md-nav__link">
+    Clone the repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetching-the-gps-values" class="md-nav__link">
+    Fetching the GPS values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ploting-the-gps-values-over-google-map" class="md-nav__link">
+    Ploting the GPS Values over Google Map
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stream-data-over-pubnub" class="md-nav__link">
+    Stream Data Over PubNub
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-directory" class="md-nav__link">
+    Change directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-pubnub-package" class="md-nav__link">
+    Import PubNub Package
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-a-pubnub-instance-with-your-publishsubscribe-keys" class="md-nav__link">
+    Configure a PubNub instance with your publish/subscribe Keys
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualize-your-gps-data-with-google-maps" class="md-nav__link">
+    Visualize your GPS Data with Google Maps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-maps-api" class="md-nav__link">
+    Google Maps API
+  </a>
+  
+    <nav class="md-nav" aria-label="Google Maps API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fetch-the-values-over-google-map" class="md-nav__link">
+    Fetch the values over Google Map
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          NVIDIA Jetson Nano
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="NVIDIA Jetson Nano" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          NVIDIA Jetson Nano
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nvidia/getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nvidia/docker-on-jetson-nano/" class="md-nav__link">
+        Installing Docker on NVIDIA Jetson
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3" tabindex="0" aria-expanded="false">
+          Projects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Projects" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nvidia/redis-grafana-docker/" class="md-nav__link">
+        BME Sensor Analytics using Redis TimeSeries, Grafana and Docker
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          NVIDIA AGX Xavier
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="NVIDIA AGX Xavier" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          NVIDIA AGX Xavier
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nvidia/jetson-xavier/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../nvidia/docker-on-xavier/" class="md-nav__link">
+        Installing Docker on NVIDIA Jetson Xavier
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="false">
+          DJI Tello Drone
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DJI Tello Drone" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          DJI Tello Drone
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tellodrone/getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tellodrone/python/" class="md-nav__link">
+        Using Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          DJI Robomaster
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DJI Robomaster" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          DJI Robomaster
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../robomaster/getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intent" class="md-nav__link">
+    Intent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    Hardware
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    Software
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-the-gps-module-to-the-raspberry-pi" class="md-nav__link">
+    Connect the GPS module to the Raspberry PI.
+  </a>
+  
+    <nav class="md-nav" aria-label="Connect the GPS module to the Raspberry PI.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#turn-off-the-serial-console" class="md-nav__link">
+    Turn Off the Serial Console
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-backup-the-file-cmdlinetxt" class="md-nav__link">
+    Step 1. Backup the file cmdline.txt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-edit-cmdlinttxt-and-remove-the-serial-interface" class="md-nav__link">
+    Step 2. Edit cmdlint.txt and remove the serial interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-delete-consolettyama0115200" class="md-nav__link">
+    Step 3. Delete console=ttyAMA0,115200
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-edit-etcinittab" class="md-nav__link">
+    Step 4. Edit /etc/inittab
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-find-ttyama0" class="md-nav__link">
+    Step 5. Find ttyAMA0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-test-the-gps" class="md-nav__link">
+    Step 6. Test the GPS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-start-the-serial-port" class="md-nav__link">
+    Step 7. Start the serial port:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-final-results" class="md-nav__link">
+    Step 8. Final Results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetching-the-values" class="md-nav__link">
+    Fetching the Values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clone-the-repository" class="md-nav__link">
+    Clone the repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetching-the-gps-values" class="md-nav__link">
+    Fetching the GPS values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ploting-the-gps-values-over-google-map" class="md-nav__link">
+    Ploting the GPS Values over Google Map
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stream-data-over-pubnub" class="md-nav__link">
+    Stream Data Over PubNub
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-directory" class="md-nav__link">
+    Change directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-pubnub-package" class="md-nav__link">
+    Import PubNub Package
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-a-pubnub-instance-with-your-publishsubscribe-keys" class="md-nav__link">
+    Configure a PubNub instance with your publish/subscribe Keys
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualize-your-gps-data-with-google-maps" class="md-nav__link">
+    Visualize your GPS Data with Google Maps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-maps-api" class="md-nav__link">
+    Google Maps API
+  </a>
+  
+    <nav class="md-nav" aria-label="Google Maps API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fetch-the-values-over-google-map" class="md-nav__link">
+    Fetch the values over Google Map
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Using GPS</h1>
+
+<p>NEO-6M GPS Module with EPROM is a complete GPS module that is based on the NEO 6M GPS. This unit uses the latest technology to give the best possible positioning information and includes a larger built-in 25 x 25mm active GPS antenna with a UART TTL socket. A battery is also included so that you can obtain a GPS lock faster. This is an updated GPS module that can be used with ardupilot mega v2. This GPS module gives the best possible position information, allowing for better performance with your Ardupilot or other Multirotor control platform.</p>
+<p>The GPS module has serial TTL output, it has four pins: TX, RX, VCC, and GND. You can download the u-centre software for configuring the GPS and changing the settings and much more. It is really good software (see link below).</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#Intent">Intent</a></li>
+<li><a href="#hardware">Hardware</a></li>
+<li><a href="#software">Software</a></li>
+<li><a href="#connect-the-gps-module-to-raspberry-pi">Connect GPS Module to Rasberry Pi</a></li>
+<li><a href="#ploting-the-gps-values-over-google-map">Ploting the GPS Values over Google Map</a></li>
+<li><a href="#stream-data-over-pubnub">Stream Data Over PubNub</a></li>
+</ol>
+<h2 id="intent">Intent</h2>
+<p>How to connect GPS to Raspberry Pi or Arduino, fetch the latitude and longitude values and plot it over Google Map</p>
+<h2 id="hardware">Hardware</h2>
+<ul>
+<li>Raspberry Pi/Arduino</li>
+<li>NEO-6M GPS Module with EPROM</li>
+</ul>
+<p><img alt="image" src="../gps1.jpeg" /></p>
+<h2 id="software">Software</h2>
+<ul>
+<li>Flash Rapsberry Pi SD card with OS using Etcher</li>
+</ul>
+<h2 id="connect-the-gps-module-to-the-raspberry-pi">Connect the GPS module to the Raspberry PI.</h2>
+<p>There are only 4 wires (F to F), so it's a simple connection.</p>
+<p><img alt="image" src="../gpspins.png" /></p>
+<ul>
+<li>
+<p>Neo-6M RPI</p>
+</li>
+<li>
+<p>VCC to Pin 1, which is 3.3v</p>
+</li>
+<li>
+<p>TX to Pin 10, which is RX (GPIO15)</p>
+</li>
+<li>
+<p>RX to Pin 8, Which is TX (GPIO14)</p>
+</li>
+<li>
+<p>Gnd to Pin 6, which is Gnd</p>
+</li>
+</ul>
+<p><img alt="image" src="../gps2.jpeg" /></p>
+<h3 id="turn-off-the-serial-console">Turn Off the Serial Console</h3>
+<p>By default, the Raspberry Pi uses the UART as a serial console. We need to turn off that functionality so that we can use the UART for our own application. Open a terminal session on the Raspberry Pi.</p>
+<h3 id="step-1-backup-the-file-cmdlinetxt">Step 1. Backup the file cmdline.txt</h3>
+<pre><code>sudo cp /boot/cmdline.txt /boot/cmdline_backup.txt 
+</code></pre>
+<h3 id="step-2-edit-cmdlinttxt-and-remove-the-serial-interface">Step 2. Edit cmdlint.txt and remove the serial interface</h3>
+<pre><code>sudo nano /boot/cmdline.txt
+</code></pre>
+<h3 id="step-3-delete-consolettyama0115200">Step 3. Delete console=ttyAMA0,115200</h3>
+<p>Once you delete it, save the file by pressing Ctrl X, Y, and Enter.</p>
+<h3 id="step-4-edit-etcinittab">Step 4. Edit /etc/inittab</h3>
+<pre><code>sudo nano /etc/inittab 
+</code></pre>
+<h3 id="step-5-find-ttyama0">Step 5. Find ttyAMA0</h3>
+<p>You can find ttyAMA0 by pressing Ctrl W and typing ttyAMA0 on the search line</p>
+<p>Press Home &gt; insert a # symbol to comment out that line and Ctrl X, Y, Enter to save.</p>
+<pre><code>sudo reboot
+</code></pre>
+<h3 id="step-6-test-the-gps">Step 6. Test the GPS</h3>
+<p>Open a terminal session and type </p>
+<pre><code>sudo apt-get install gpsd gpsd-clients
+</code></pre>
+<h3 id="step-7-start-the-serial-port">Step 7. Start the serial port:</h3>
+<pre><code>stty -F /dev/ttyAMA0 9600
+</code></pre>
+<p>Now start GPSD:</p>
+<pre><code>sudo gpsd /dev/ttyAMA0 -F /var/run/gpsd.sock
+</code></pre>
+<h3 id="step-8-final-results">Step 8. Final Results</h3>
+<pre><code>cgps -s
+</code></pre>
+<h3 id="fetching-the-values">Fetching the Values</h3>
+<h3 id="clone-the-repository">Clone the repository</h3>
+<pre><code>git clone https://github.com/collabnix/cherrybot
+cd cherrybot/pubnub/
+</code></pre>
+<h3 id="fetching-the-gps-values">Fetching the GPS values</h3>
+<pre><code>python3 gps.py
+</code></pre>
+<pre><code>Latitude=12.9814865and Longitude=77.6683425
+Latitude=12.9814848333and Longitude=77.6683436667
+Latitude=12.9814841667and Longitude=77.6683451667
+Latitude=12.9814818333and Longitude=77.6683461667
+Latitude=12.9814853333and Longitude=77.6683491667
+Latitude=12.9814783333and Longitude=77.6683485
+Latitude=12.9814701667and Longitude=77.6683466667
+Latitude=12.981464and Longitude=77.668345
+Latitude=12.9814586667and Longitude=77.6683438333
+Latitude=12.9814525and Longitude=77.6683428333
+Latitude=12.9814458333and Longitude=77.6683421667
+Latitude=12.9814395and Longitude=77.6683421667
+Latitude=12.9814331667and Longitude=77.668342
+Latitude=12.981428and Longitude=77.6683425
+Latitude=12.981423and Longitude=77.6683428333
+Latitude=12.9814185and Longitude=77.6683431667
+Latitude=12.9814146667and Longitude=77.6683436667
+Latitude=12.9814095and Longitude=77.6683443333
+Latitude=12.9814056667and Longitude=77.6683456667
+Latitude=12.981401and Longitude=77.668346
+Latitude=12.9813966667and Longitude=77.66834
+</code></pre>
+<h2 id="ploting-the-gps-values-over-google-map">Ploting the GPS Values over Google Map</h2>
+<h2 id="stream-data-over-pubnub">Stream Data Over PubNub</h2>
+<p>If you haven’t already done so, <a href="https://admin.pubnub.com/">sign up for a free PubNub account</a> before you begin this step.</p>
+<h2 id="change-directory">Change directory</h2>
+<p>Change directory into the examples directory containing the gps_simpletest.py file and install the PubNub Python SDK.</p>
+<pre><code>pip3 install pubnub
+</code></pre>
+<h2 id="import-pubnub-package">Import PubNub Package</h2>
+<pre><code>import pubnub
+from pubnub.pnconfiguration import PNConfiguration
+from pubnub.pubnub import PubNub
+from pubnub.callbacks import SubscribeCallback
+from pubnub.enums import PNOperationType, PNStatusCategory
+</code></pre>
+<h2 id="configure-a-pubnub-instance-with-your-publishsubscribe-keys">Configure a PubNub instance with your publish/subscribe Keys</h2>
+<pre><code>pnconfig = PNConfiguration()
+pnconfig.subscribe_key = &quot;YOUR SUBSCRIBE KEY&quot;
+pnconfig.publish_key = &quot;YOUR PUBLISH KEY&quot;
+pnconfig.ssl = False
+pubnub = PubNub(pnconfig)
+</code></pre>
+<p>Then to publish, place a publishing callback somewhere near the beginning of your code. You can write whatever you want for the callback, but we’ll leave it blank as we don’t really need it for now.</p>
+<pre><code>def publish_callback(result, status):
+    pass
+    # Handle PNPublishResult and PNStatus
+</code></pre>
+<p>Here is where you decide what data you want to publish. Since we are building just a simple GPS tracking device, we’re just going to be dealing with the latitude and longitude coordinates.</p>
+<p>When you want to publish multiple variables in one JSON, you must create a dictionary like so:</p>
+<pre><code>dictionary = {&quot;DATA 1 NAME&quot;: gps.DATA1, &quot;DATA 2 NAME&quot;: gps.DATA2}
+</code></pre>
+<p>So in our case we would write:</p>
+<pre><code>dictionary = {&quot;latitude&quot;: gps.latitude, &quot;longitude&quot;: gps.longitude}
+</code></pre>
+<p>And then to publish that data, you would format the dictionary like this:</p>
+<pre><code>pubnub.publish().channel(&quot;CHANNEL&quot;).message(dictionary).pn_async(publish_callback)
+</code></pre>
+<p>It is best to place the dictionary and publishing lines within the “if gps.DATA is not none” to avoid any program failures.</p>
+<h2 id="visualize-your-gps-data-with-google-maps">Visualize your GPS Data with Google Maps</h2>
+<p>It's time to visualize our GPS data in a way that humans can understand.</p>
+<p>We’re just going to create a small HTML page that will grab GPS data from our PubNub channel and graph the data with a geolocation API.</p>
+<h2 id="google-maps-api">Google Maps API</h2>
+<p>The Google Maps API is a universal tool that is not only one of the cheaper APIs for a greater amount of API calls but also has a rich and expansive toolset for developers. The GPS data is not only more accurate than most other APIs, but also has extensive tools such as “ETA” that uses Google’s geographical terrain data.</p>
+<p>So if you ever want to build a serious GPS tracking app with PubNub, Google Maps is the way to go.</p>
+<p>Image result for google maps api with marker</p>
+<p>You’ll first need to get a Google Maps API Key</p>
+<p>Once that’s done, create an .html file and copy-paste the code below (explanation of the code is below as well).</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Simple Map&lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1.0&quot;&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;style&gt;
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    &lt;/style&gt;
+    &lt;script src=&quot;https://cdn.pubnub.com/sdk/javascript/pubnub.4.23.0.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
+    &lt;script&gt;
+  // the smooth zoom function
+  function smoothZoom (map, max, cnt) {
+      if (cnt &gt;= max) {
+          return;
+      }
+      else {
+          z = google.maps.event.addListener(map, 'zoom_changed', function(event){
+              google.maps.event.removeListener(z);
+              smoothZoom(map, max, cnt + 1);
+          });
+          setTimeout(function(){map.setZoom(cnt)}, 80); // 80ms is what I found to work well on my system -- it might not work well on all systems
+      }
+  } 
+    var pubnub = new PubNub({
+    subscribeKey: &quot;YOUR SUBSCRIBE KEY&quot;,
+    ssl: true
+  });  
+  var longitude = 30.5;
+  var latitude = 50.5;
+  pubnub.addListener({
+      message: function(m) {
+          // handle message
+          var channelName = m.channel; // The channel for which the message belongs
+          var channelGroup = m.subscription; // The channel group or wildcard subscription match (if exists)
+          var pubTT = m.timetoken; // Publish timetoken
+          var msg = m.message; // The Payload
+          longitude = msg.longitude;
+          latitude = msg.latitude;
+          var publisher = m.publisher; //The Publisher
+    var myLatlng = new google.maps.LatLng(latitude, longitude);
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        title:&quot;PubNub GPS&quot;
+    });
+    // To add the marker to the map, call setMap();
+    map.setCenter(marker.position);
+    smoothZoom(map, 14, map.getZoom());
+    marker.setMap(map);
+      },
+      presence: function(p) {
+          // handle presence
+          var action = p.action; // Can be join, leave, state-change or timeout
+          var channelName = p.channel; // The channel for which the message belongs
+          var occupancy = p.occupancy; // No. of users connected with the channel
+          var state = p.state; // User State
+          var channelGroup = p.subscription; //  The channel group or wildcard subscription match (if exists)
+          var publishTime = p.timestamp; // Publish timetoken
+          var timetoken = p.timetoken;  // Current timetoken
+          var uuid = p.uuid; // UUIDs of users who are connected with the channel
+      },
+      status: function(s) {
+          var affectedChannelGroups = s.affectedChannelGroups;
+          var affectedChannels = s.affectedChannels;
+          var category = s.category;
+          var operation = s.operation;
+      }
+  });
+  pubnub.subscribe({
+      channels: ['ch1'],
+  });
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: latitude, lng: longitude},
+          zoom: 8
+        });
+      }
+    &lt;/script&gt;
+    &lt;script src=&quot;https://maps.googleapis.com/maps/api/js?key=AIzaSyBLuWQHjBa9SMVVDyyqxqTpR2ZwnxwcbGE&amp;callback=initMap&quot;
+    async defer&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>This part of the code is responsible for rendering our map on the HTML page.</p>
+<pre><code>&lt;style&gt;
+  /* Always set the map height explicitly to define the size of the div
+   * element that contains the map. */
+  #map {
+    height: 100%;
+  }
+  /* Optional: Makes the sample page fill the window. */
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+&lt;/style&gt;
+</code></pre>
+<p>Just a little below it, we enter a div id tag to tell where we want the map to render:</p>
+<p>//div tag for map[] id
+     <div id="map"></div></p>
+<p>Here we simply import the PubNub JS SDK to enable PubNub data streaming for our GPS data:</p>
+<pre><code>&lt;script src=&quot;https://cdn.pubnub.com/sdk/javascript/pubnub.4.23.0.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>We must also import the Google Maps API with this script tag:</p>
+<pre><code>&lt;script src=&quot;https://maps.googleapis.com/maps/api/js?key=YOURAPIKEY&amp;callback=initMap&quot;async defer&gt;&lt;/script&gt;
+</code></pre>
+<p>NOTE: The rest of the code is encapsulated within one script tag, so don’t be alarmed if we jump around in explaining this final part of the code.</p>
+<p>In order to stream our data, instantiate a PubNub instance:</p>
+<pre><code>var pubnub = new PubNub({
+    subscribeKey: &quot;YOUR SUBSCRIBE KEY&quot;,
+    ssl: true
+  });
+</code></pre>
+<p>Then we instantiate a PubNub listener with the following code.</p>
+<pre><code>pubnub.addListener({
+      message: function(m) {
+          // handle message
+          var channelName = m.channel; // The channel for which the message belongs
+          var channelGroup = m.subscription; // The channel group or wildcard subscription match (if exists)
+          var pubTT = m.timetoken; // Publish timetoken
+          var publisher = m.publisher; //The Publisher
+
+          var msg = m.message; // The Payload
+          //extract and save the longitude and latitude data from your incomming PubNub message
+          longitude = msg.longitude;
+          latitude = msg.latitude;
+
+        //Create a new Google Maps instance with updated GPS coordinates
+      var myLatlng = new google.maps.LatLng(latitude, longitude);
+      //Create a marker instance with the coordinates
+      var marker = new google.maps.Marker({
+          position: myLatlng,
+          title:&quot;PubNub GPS&quot;
+      });
+
+      //center the map with the maker position
+      map.setCenter(marker.position);
+      //Optional: create a zooming annimation when the gps changes coordinates
+      smoothZoom(map, 14, map.getZoom());
+      // To add the marker to the map, call setMap();
+      marker.setMap(map);
+      },
+      presence: function(p) {
+          // handle presence
+          var action = p.action; // Can be join, leave, state-change or timeout
+          var channelName = p.channel; // The channel for which the message belongs
+          var occupancy = p.occupancy; // No. of users connected with the channel
+          var state = p.state; // User State
+          var channelGroup = p.subscription; //  The channel group or wildcard subscription match (if exists)
+          var publishTime = p.timestamp; // Publish timetoken
+          var timetoken = p.timetoken;  // Current timetoken
+          var uuid = p.uuid; // UUIDs of users who are connected with the channel
+      },
+      status: function(s) {
+          var affectedChannelGroups = s.affectedChannelGroups;
+          var affectedChannels = s.affectedChannels;
+          var category = s.category;
+          var operation = s.operation;
+      }
+  });
+</code></pre>
+<p>In order to avoid syntax errors, place a subscriber instance right below the listener.</p>
+<pre><code>pubnub.subscribe({
+      channels: ['YOUR CHANNEL NAME'],
+  });
+</code></pre>
+<p>As you can see, we open up incoming messages with the following line of code.</p>
+<pre><code>var msg = m.message; // The Payload
+</code></pre>
+<p>And then extract the variables we desire based on the sent JSON.</p>
+<pre><code>longitude = msg.longitude;
+latitude = msg.latitude;
+</code></pre>
+<p>We then format the data variables in accordance to a Google Maps object.</p>
+<pre><code>var myLatlng = new google.maps.LatLng(latitude, longitude);
+</code></pre>
+<p>To set a Google marker on our GPS coordinates we create a Google Maps marker object.</p>
+<pre><code>var marker = new google.maps.Marker({
+          position: myLatlng,
+          title:&quot;Title of Marker&quot;
+      });
+</code></pre>
+<p>Then add the marker to your Google Maps object by calling setMap().</p>
+<pre><code>marker.setMap(map);
+</code></pre>
+<p>Of course, it would be nice to center our map on the marker so we can actually see it so we center it on the markers position.</p>
+<pre><code>map.setCenter(marker.position);
+</code></pre>
+<p>This is optional, but if you want to add a smooth zooming animation every time you locate a marker, call a smoothZoom function like so.</p>
+<pre><code>smoothZoom(map, 14, map.getZoom());
+</code></pre>
+<p>And implement the smoothZoom function somewhere.</p>
+<pre><code>function smoothZoom (map, max, cnt) {
+      if (cnt &gt;= max) {
+          return;
+      }
+      else {
+          z = google.maps.event.addListener(map, 'zoom_changed', function(event){
+              google.maps.event.removeListener(z);
+              smoothZoom(map, max, cnt + 1);
+          });
+          setTimeout(function(){map.setZoom(cnt)}, 80); // 80ms is what I found to work well on my system -- it might not work well on all systems
+      }
+  } 
+</code></pre>
+<p>Lastly we’ll need to initialize the map so we write:</p>
+<pre><code>var map;
+     function initMap() {
+       map = new google.maps.Map(document.getElementById('map'), {
+         center: {lat: latitude, lng: longitude},
+         zoom: 8
+       });
+     }
+</code></pre>
+<p>And set the initial values of your latitude and longitude variables to wherever you want.</p>
+<pre><code>var longitude = 30.5;
+var latitude = 50.5;
+</code></pre>
+<p>And that’s it! </p>
+<h3 id="fetch-the-values-over-google-map">Fetch the values over Google Map</h3>
+<pre><code>open frontend.html
+</code></pre>
+<p><img alt="image" src="../googlemap.png" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  </body>
+</html>

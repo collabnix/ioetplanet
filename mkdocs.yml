@@ -20,5 +20,8 @@ nav:
      - Getting Started: tellodrone/getting-started.md
      - Using Python: tellodrone/python.md
 
+  - DJI Robomaster:
+    - Getting Started: robomaster/getting-started.md
+
 
 theme: material

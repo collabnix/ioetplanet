@@ -1,0 +1,1038 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../tellodrone/python/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.5">
+    
+    
+      
+        <title>Getting Started - IoETPlanet</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#an-ultimate-tutorial-for-dji-robomaster-s1-beginners" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="IoETPlanet" class="md-header__button md-logo" aria-label="IoETPlanet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IoETPlanet
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Getting Started
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IoETPlanet" class="md-nav__button md-logo" aria-label="IoETPlanet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IoETPlanet
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="false">
+          Raspberry Pi
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Raspberry Pi" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Raspberry Pi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberrypi/getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberrypi/docker-on-raspberrypi/" class="md-nav__link">
+        Installing Docker on Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" tabindex="0" aria-expanded="false">
+          Projects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Projects" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberrypi/projects/Pico/" class="md-nav__link">
+        Pico Project
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberrypi/projects/GPS/getting-started/" class="md-nav__link">
+        Using GPS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          NVIDIA Jetson Nano
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="NVIDIA Jetson Nano" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          NVIDIA Jetson Nano
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nvidia/getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nvidia/docker-on-jetson-nano/" class="md-nav__link">
+        Installing Docker on NVIDIA Jetson
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3" tabindex="0" aria-expanded="false">
+          Projects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Projects" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nvidia/redis-grafana-docker/" class="md-nav__link">
+        BME Sensor Analytics using Redis TimeSeries, Grafana and Docker
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          NVIDIA AGX Xavier
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="NVIDIA AGX Xavier" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          NVIDIA AGX Xavier
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nvidia/jetson-xavier/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nvidia/docker-on-xavier/" class="md-nav__link">
+        Installing Docker on NVIDIA Jetson Xavier
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="false">
+          DJI Tello Drone
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DJI Tello Drone" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          DJI Tello Drone
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tellodrone/getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tellodrone/python/" class="md-nav__link">
+        Using Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="true">
+          DJI Robomaster
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DJI Robomaster" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          DJI Robomaster
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Getting Started
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-10-features" class="md-nav__link">
+    Top 10 Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stimulus-that-s1-recognises" class="md-nav__link">
+    Stimulus that S1 recognises
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    How it works?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents_1" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-10-features" class="md-nav__link">
+    Top 10 Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stimulus-that-s1-recognises" class="md-nav__link">
+    Stimulus that S1 recognises
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    How it works?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents_1" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="an-ultimate-tutorial-for-dji-robomaster-s1-beginners">An Ultimate Tutorial for DJI Robomaster S1 Beginners</h1>
+<p><img alt="MY Image" src="../robomaster_top.png" /></p>
+<p>The RoboMaster S1 is an educational robot that provides users with an in-depth understanding of science, math, physics, programming, and more through captivating gameplay modes and intelligent features.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#top-10-features">Top 10 Features</a></li>
+<li><a href="#Stimulus-that-S1-recognises">Stimulus that S1 Recognises</a></li>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#items-check-and-assembly">Items Check and Assembly</a></li>
+<li><a href="#assembly-the-mecanum-wheels">Asembly the Mecanum Wheels</a></li>
+<li><a href="#attaching-the-gimbal-to-the-chassis">Attaching the Gimbal to the Chassis</a></li>
+<li><a href="#mounting-the-gel-bead-container-and-intelligent-battery">Mounting the Gel Bead Container and Intelligent Battery</a></li>
+<li><a href="#hacking-into-robomaster">Hacking into Robomaster S1</a></li>
+<li><a href="#references">References</a></li>
+</ol>
+<h2 id="top-10-features">Top 10 Features</h2>
+<ul>
+<li>Support for Python and Scratch programming language</li>
+<li>46 Programmable Components - all in DIY mode</li>
+<li>6 Programmable AI Module</li>
+<li>Low-latency HD FPV</li>
+<li>Scratch &amp; Python Coding</li>
+<li>4WD Omnidirectional Movement</li>
+<li>Intelligent Sensing Armor</li>
+<li>Multiple Exciting Battle Modes</li>
+<li>Innovative Hands-On Learning</li>
+<li>Two shooting methods: gel beads and infrared beams.</li>
+<li>Capability to capture photos and record 1080p videos; without a microSD card, it supports only 720p.</li>
+</ul>
+<h2 id="stimulus-that-s1-recognises">Stimulus that S1 recognises</h2>
+<ul>
+<li>Clapping Recognition: the S1 can recognize two or three consecutive claps and be programmed to execute custom responses.</li>
+<li>Gesture Recognition: the S1 can detect human gestures such as hand or arm signals and be programmed to execute custom responses.</li>
+<li>S1 Robot Recognition: the S1 can detect other RoboMaster S1 units.</li>
+<li>Vision Marker Recognition: the S1 can identify 44 kinds of official Vision Markers, which are comprised primarily of numbers, letters, and special characters. All of the files for these Vision Markers can be downloaded at insert web address.</li>
+<li>Line Recognition: the S1 can detect and follow blue, red, and green tracks with a width of approximately 15-25 mm.</li>
+</ul>
+<h2 id="how-it-works">How it works?</h2>
+<ul>
+<li>The RoboMaster S1 can be operated using a computer or a smart device via the touchscreen and gamepad. When using the gamepad with a touchscreen device, the robot can also be operated using an external mouse, which can be connected through a dedicated USB port</li>
+<li>Users can connect to the RoboMaster S1 via Wi-Fi or a router. When connecting via Wi-Fi, your mobile device or computer connects to the Wi-Fi of the S1. Connection via router provides broader signal coverage, which allows multiple control methods for robots to operate simultaneously on the same network.</li>
+<li>Flat surfaces such as wood, carpet, tile, and concrete are optimal for operating the S1. Users should avoid surfaces that are too smooth as the S1 wheels may have problems gaining enough traction for precise control. Surfaces with fine particles like sand or dirt should be avoided.</li>
+</ul>
+<h2 id="table-of-contents_1">Table of Contents</h2>
+<ol>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#items-check-and-assembly">Items Check and Assembly</a></li>
+<li><a href="#assembly-the-mecanum-wheels">Asembly the Mecanum Wheels</a></li>
+<li><a href="#attaching-the-gimbal-to-the-chassis">Attaching the Gimbal to the Chassis</a></li>
+<li><a href="#mounting-the-gel-bead-container-and-intelligent-battery">Mounting the Gel Bead Container and Intelligent Battery</a></li>
+<li><a href="#hacking-into-robomaster">Hacking into Robomaster S1</a></li>
+</ol>
+<h1 id="getting-started">Getting Started</h1>
+<ul>
+<li>Installing Robomaster Python Module on MacOS</li>
+</ul>
+<pre><code>conda create --name dji python=3.7
+</code></pre>
+<pre><code>conda activate dji
+</code></pre>
+<pre><code>pip install robomaster
+</code></pre>
+<h1 id="steps-to-assemble-robomaster">Steps to assemble Robomaster</h1>
+<p><img alt="robo" src="/images/robo1.jpg" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563246-22dd3b00-b0c2-11eb-83aa-33a847756b95.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563252-2e306680-b0c2-11eb-98e4-821cfd37fae6.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563258-37213800-b0c2-11eb-948a-e5493c1ac43c.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563264-430cfa00-b0c2-11eb-92bc-164262c5c2cc.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563296-794a7980-b0c2-11eb-88d6-43724390baaf.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563215-f45f6000-b0c1-11eb-9804-4aebff9d5321.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563237-135df200-b0c2-11eb-82d0-e6eccf57768f.png" /></p>
+<h1 id="items-check-and-assembly">Items Check and Assembly</h1>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563215-f45f6000-b0c1-11eb-9804-4aebff9d5321.png" /></p>
+<h1 id="assembly-the-mecanum-wheels">Assembly the Mecanum Wheels</h1>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563270-50c27f80-b0c2-11eb-8fe0-47978a6c16de.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563276-5a4be780-b0c2-11eb-9a21-dfcec6817f7a.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563302-849da500-b0c2-11eb-847e-972352e28c78.png" />
+<img alt="image" src="https://user-images.githubusercontent.com/34368930/117563305-8d8e7680-b0c2-11eb-94e3-3cfa958a37e6.png" /></p>
+<h1 id="attaching-the-gimbal-to-the-chassis">Attaching the Gimbal to the chassis</h1>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563309-97b07500-b0c2-11eb-98b8-68b39d1537c0.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563313-a434cd80-b0c2-11eb-8fe3-68d868c2ef0d.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563319-aeef6280-b0c2-11eb-9dda-a3c80b3884b5.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563326-bd3d7e80-b0c2-11eb-812f-a44090b09e9c.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563329-c9294080-b0c2-11eb-8feb-5296c9a7b608.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563332-d2b2a880-b0c2-11eb-8b3a-8b8af397a1ac.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563343-e100c480-b0c2-11eb-838f-421ab7d5adfd.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563359-f7a71b80-b0c2-11eb-8939-7c2e7a7f6bf9.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563368-042b7400-b0c3-11eb-83bc-f841b5d85486.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563375-0f7e9f80-b0c3-11eb-88f1-2e6d545d81e5.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563385-1d342500-b0c3-11eb-99f4-f2a7a47fd087.png" /></p>
+<h1 id="mounting-the-gel-bead-container-and-intelligent-battery">Mounting the Gel Bead Container and Intelligent Battery</h1>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563399-2d4c0480-b0c3-11eb-8ba4-11bcd1c20fbc.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563405-39d05d00-b0c3-11eb-80b1-01a9178e17a4.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563409-448af200-b0c3-11eb-934a-4faccae0c8ae.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563413-52407780-b0c3-11eb-9e69-5e97dd8f50d5.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563417-5d93a300-b0c3-11eb-9a04-4d4017185d41.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563428-697f6500-b0c3-11eb-8ddd-61424cffd8e3.png" /></p>
+<h2 id="get-ready">Get Ready!</h2>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/117563481-d692fa80-b0c3-11eb-8e34-5fd1a05f713e.png" /></p>
+<h2 id="hacking-into-robomaster">Hacking into Robomaster</h2>
+<h3 id="what-you-need">What you need</h3>
+<ul>
+<li>Android SDK Platform‐Tools (https://developer.android.com/studio/releases/platform‐tools)</li>
+<li>Micro USB Cable</li>
+<li>Latest Robomaster S1 App &amp; Firmware</li>
+<li>Windows 10 (might or mightn't work for MacOS)</li>
+</ul>
+<h3 id="step-by-step-instructions">Step by step instructions</h3>
+<ul>
+<li>Unzip the Android SDK Platform‐Tools somewhere in your system</li>
+<li>Use the Intelligent Controller Micro USB Port and connect the S1 to your computer.</li>
+<li>Start the Robomaster S1 application. Go to the Lab, create a new Python application and
+paste the following code:</li>
+</ul>
+<pre><code>def root_me(module):
+ __import__=rm_log.__dict__['__builtins__']['__import__']
+ return __import__(module,globals(),locals(),[],0)
+builtins=root_me('builtins')
+subprocess=root_me('subprocess')
+proc=subprocess.Popen('/system/bin/adb_en.sh',shell=True,executable='
+/system/bin/sh',stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+</code></pre>
+<ul>
+<li>
+<p>Run the Code within the S1 Lab. If you followed the steps correctly there should be no
+compilation errors. The Console will show: Execution Complete</p>
+</li>
+<li>
+<p>Don’t close the S1 Application! Open an Explorer window and go to the directory which holds
+the earlier extracted Android Platform Tools. Open a PowerShell in this directory (Shift +
+Right‐Click)</p>
+</li>
+<li>
+<p>Run the ADP command to list the devices: </p>
+</li>
+</ul>
+<pre><code>.\adb.exe devices
+</code></pre>
+<p>You should see something like this:</p>
+<p><img width="599" alt="Screen Shot 2021-07-21 at 2 04 14 PM" src="https://user-images.githubusercontent.com/34368930/126458132-9a1fdd51-3d2f-4695-88a1-896d3ca09652.png"></p>
+<ul>
+<li>Execute: </li>
+</ul>
+<pre><code>.\adb.exe shell
+</code></pre>
+<p><img width="689" alt="Screen Shot 2021-07-21 at 2 04 35 PM" src="https://user-images.githubusercontent.com/34368930/126458200-a5f8727a-1a2d-4953-852d-066b34237913.png"></p>
+<h2 id="dji-specific-commands">DJI Specific Commands</h2>
+<pre><code>dji
+dji_amt_board       dji_derivekey       dji_monitor         dji_verify
+dji_blackbox        dji_hdvt_uav        dji_net.sh          dji_vision
+dji_camera          dji_log_control.sh  dji_network
+dji_chkotp          dji_mb_ctrl         dji_sw_uav
+dji_cpuburn         dji_mb_parser       dji_sys
+</code></pre>
+<h3 id="checking-ip-address">Checking IP address</h3>
+<pre><code> ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+8: rndis0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+    link/ether 0a:f8:f6:bb:55:64 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.42.2/24 brd 192.168.42.255 scope global rndis0
+       valid_lft forever preferred_lft forever
+9: wlan0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+    link/ether 60:60:1f:cd:95:f7 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.2.1/24 brd 192.168.2.255 scope global wlan0
+       valid_lft forever preferred_lft forever
+ ```
+
+ ### Checking the type of Hunter.py file
+
+</code></pre>
+<p>./hunter.py
+ vision_ctrl.enable_detection(rm_define.vision_detection_marker)  </p>
+<pre><code>
+### Checking Memory Stats
+
+</code></pre>
+<p>127|root@xw607_dz_ap0002_v4:/system/bin # cat /proc/meminfo
+MemTotal:         271708 kB
+MemFree:           59076 kB
+Buffers:           18700 kB
+Cached:            94776 kB
+SwapCached:            0 kB
+Active:           117648 kB
+Inactive:          58020 kB
+Active(anon):      62724 kB
+Inactive(anon):      136 kB
+Active(file):      54924 kB
+Inactive(file):    57884 kB
+Unevictable:         500 kB
+Mlocked:               0 kB
+HighTotal:             0 kB
+HighFree:              0 kB
+LowTotal:         271708 kB
+LowFree:           59076 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                36 kB
+Writeback:             0 kB
+AnonPages:         62696 kB
+Mapped:            12308 kB
+Shmem:               176 kB
+Slab:              12712 kB
+SReclaimable:       6248 kB
+SUnreclaim:         6464 kB
+KernelStack:        2152 kB
+PageTables:         1300 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      135852 kB
+Committed_AS:     341612 kB
+VmallocTotal:     745472 kB
+VmallocUsed:      153220 kB
+VmallocChunk:     432132 kB</p>
+<pre><code>
+### Top Command
+
+</code></pre>
+<p>root@xw607_dz_ap0002_v4:/system/bin # top
+  User 8%, System 13%, IOW 0%, IRQ 0%
+  User 126 + Nice 0 + Sys 203 + Idle 1138 + IOW 2 + IRQ 0 + SIRQ 1 = 1470</p>
+<p>PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+14020  1   3% S    28 146468K   8588K  fg root     /system/bin/dji_camera
+  247  3   3% S    24 213128K  14876K  fg root     /system/bin/dji_vision
+  483  1   2% S     8 112412K  11072K unk root     /data/python_files/bin/python
+  233  1   2% S    22  44460K   5232K  fg root     /system/bin/dji_hdvt_uav
+  239  0   1% S    15  31368K   4464K  fg root     /system/bin/dji_sw_uav
+  237  0   0% S    13  24208K   4092K  fg root     /system/bin/dji_network
+   41  0   0% S     1      0K      0K  fg root     kworker/0:1
+  245  1   0% S     6  31904K  20492K  fg root     /system/bin/dji_blackbox
+   69  1   0% S     1      0K      0K  fg root     mmcqd/0
+  243  1   0% S    27  50832K   9300K  fg root     /system/bin/dji_sys
+```</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.dji.com/robomaster-s1/video">Robomaster S1 Videos</a></li>
+<li><a href="https://www.dji.com/robomaster-s1/video-courses">Robomaster S1 Courses</a></li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  </body>
+</html>

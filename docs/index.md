@@ -13,6 +13,7 @@
 - [Getting Started with NVIDIA Jetson Nano](/nvidia/getting-started/)
 - [Getting Started with Docker on Jetson Nano](/nvidia/docker-on-jetson-nano/)
 - [BME Sensor Analytics using Redis TimeSeries, Grafana and Docker](/nvidia/redis-grafana-docker/)
+- [OLED Display using Groove on Jetson Nano](/nvidia/oled-groove-jetson/)
 
 
 ## NVIDIA Jetson Xavier AGX

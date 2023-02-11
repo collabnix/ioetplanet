@@ -12,6 +12,7 @@ nav:
      - Installing Docker on NVIDIA Jetson: nvidia/docker-on-jetson-nano.md
      - Projects:
           - BME Sensor Analytics using Redis TimeSeries, Grafana and Docker: nvidia/redis-grafana-docker.md
+          - OLED Display using Groove Hat on Jetson Nano: nvidia/oled-groove-jetson.md
   - NVIDIA AGX Xavier:
      - Getting Started: nvidia/jetson-xavier.md
      - Installing Docker on NVIDIA Jetson Xavier: nvidia/docker-on-xavier.md

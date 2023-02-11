@@ -414,6 +414,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nvidia/oled-groove-jetson/" class="md-nav__link">
+        OLED Display using Groove Hat on Jetson Nano
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -918,74 +932,7 @@ dji_cpuburn         dji_mb_parser       dji_sys
     link/ether 60:60:1f:cd:95:f7 brd ff:ff:ff:ff:ff:ff
     inet 192.168.2.1/24 brd 192.168.2.255 scope global wlan0
        valid_lft forever preferred_lft forever
- ```
-
- ### Checking the type of Hunter.py file
-
 </code></pre>
-<p>./hunter.py
- vision_ctrl.enable_detection(rm_define.vision_detection_marker)  </p>
-<pre><code>
-### Checking Memory Stats
-
-</code></pre>
-<p>127|root@xw607_dz_ap0002_v4:/system/bin # cat /proc/meminfo
-MemTotal:         271708 kB
-MemFree:           59076 kB
-Buffers:           18700 kB
-Cached:            94776 kB
-SwapCached:            0 kB
-Active:           117648 kB
-Inactive:          58020 kB
-Active(anon):      62724 kB
-Inactive(anon):      136 kB
-Active(file):      54924 kB
-Inactive(file):    57884 kB
-Unevictable:         500 kB
-Mlocked:               0 kB
-HighTotal:             0 kB
-HighFree:              0 kB
-LowTotal:         271708 kB
-LowFree:           59076 kB
-SwapTotal:             0 kB
-SwapFree:              0 kB
-Dirty:                36 kB
-Writeback:             0 kB
-AnonPages:         62696 kB
-Mapped:            12308 kB
-Shmem:               176 kB
-Slab:              12712 kB
-SReclaimable:       6248 kB
-SUnreclaim:         6464 kB
-KernelStack:        2152 kB
-PageTables:         1300 kB
-NFS_Unstable:          0 kB
-Bounce:                0 kB
-WritebackTmp:          0 kB
-CommitLimit:      135852 kB
-Committed_AS:     341612 kB
-VmallocTotal:     745472 kB
-VmallocUsed:      153220 kB
-VmallocChunk:     432132 kB</p>
-<pre><code>
-### Top Command
-
-</code></pre>
-<p>root@xw607_dz_ap0002_v4:/system/bin # top
-  User 8%, System 13%, IOW 0%, IRQ 0%
-  User 126 + Nice 0 + Sys 203 + Idle 1138 + IOW 2 + IRQ 0 + SIRQ 1 = 1470</p>
-<p>PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
-14020  1   3% S    28 146468K   8588K  fg root     /system/bin/dji_camera
-  247  3   3% S    24 213128K  14876K  fg root     /system/bin/dji_vision
-  483  1   2% S     8 112412K  11072K unk root     /data/python_files/bin/python
-  233  1   2% S    22  44460K   5232K  fg root     /system/bin/dji_hdvt_uav
-  239  0   1% S    15  31368K   4464K  fg root     /system/bin/dji_sw_uav
-  237  0   0% S    13  24208K   4092K  fg root     /system/bin/dji_network
-   41  0   0% S     1      0K      0K  fg root     kworker/0:1
-  245  1   0% S     6  31904K  20492K  fg root     /system/bin/dji_blackbox
-   69  1   0% S     1      0K      0K  fg root     mmcqd/0
-  243  1   0% S    27  50832K   9300K  fg root     /system/bin/dji_sys
-```</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.dji.com/robomaster-s1/video">Robomaster S1 Videos</a></li>

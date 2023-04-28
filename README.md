@@ -22,3 +22,9 @@ To install MkDocs, run the following command from the command line:
 ```
 mkdocs serve
 ```
+
+
+## Contributors
+
+- [Ajeet Singh Raina](https://www.linkedin.com/in/ajeetsraina/)
+- [Abhishek Das](https://www.linkedin.com/in/abhishekdas2512/)

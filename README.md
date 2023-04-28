@@ -1,28 +1,11 @@
-# ioetplanet
-Internet of Every Thing
+# Internet of Every Thing
 
-
-# Getting Started
-
-
-## Building Locally
-
-### Installing mkdocs
-
-
-
-To install MkDocs, run the following command from the command line:
+## To run the docs locally, you need to install the dependencies and then run the server.
 
 ```
- pip install mkdocs
+pip install -r requirements.txt
 ```
-
-### Preview the Build
-
 
 ```
 mkdocs serve
 ```
-
-
-

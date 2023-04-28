@@ -1,10 +1,23 @@
-# Internet of Every Thing
+# List of IoT Labs curated by the Collabnix Community
 
-## To run the docs locally, you need to install the dependencies and then run the server.
+
+# Getting Started
+
+
+## Building Locally
+
+### Installing mkdocs
+
+
+
+To install MkDocs, run the following command from the command line:
 
 ```
-pip install -r requirements.txt
+ pip3 install mkdocs
 ```
+
+### Preview the Build
+
 
 ```
 mkdocs serve

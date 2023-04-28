@@ -7,8 +7,8 @@ nav:
       - Projects:
           - Pico Project: raspberrypi/projects/Pico/index.md
   - NVIDIA Jetson Nano:
-     - Getting Started: nvidia/getting-started.md
-     - Installing Docker on NVIDIA Jetson: nvidia/docker-on-jetson-nano.md
+      - Getting Started: nvidia/getting-started.md
+      - Installing Docker on NVIDIA Jetson: nvidia/docker-on-jetson-nano.md
 
-
-theme: material
+theme:
+  name: material

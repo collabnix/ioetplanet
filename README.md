@@ -6,15 +6,11 @@
 
 ## Building Locally
 
-### Installing mkdocs
+### Installing the required dependencies
 
-
-
-To install MkDocs, run the following command from the command line:
 
 ```
- pip3 install mkdocs
- pip3 install mkdocs-material
+ pip3 install -r requirements.txt
 ```
 
 ### Preview the Build
@@ -22,6 +18,12 @@ To install MkDocs, run the following command from the command line:
 
 ```
 mkdocs serve
+```
+
+## Accessing the app
+
+```
+http://127.0.0.1:8000/
 ```
 
 

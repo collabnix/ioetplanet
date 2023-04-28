@@ -14,7 +14,7 @@ To install MkDocs, run the following command from the command line:
 
 ```
  pip3 install mkdocs
- pip3 install modocs-material
+ pip3 install mkdocs-material
 ```
 
 ### Preview the Build
